@@ -611,17 +611,14 @@ function pvOpen(key,fromEl){
   const w=museumById("uffizi").works.find(x=>x.key===key); const ov=document.getElementById("pv"); const cv=document.getElementById("pvc");
   document.getElementById("pvt").textContent=UI[lang].inside.replace("%s",w.name[lang]); document.getElementById("pvx").textContent=UI[lang].pvback; document.getElementById("pvh").textContent=UI[lang].pvhint;
   ov.hidden=false; document.body.style.overflow="hidden";
-  const r=fromEl.getBoundingClientRect(); const fx=document.getElementById("pvfly");
-  fx.style.cssText=`left:${r.left}px;top:${r.top}px;width:${r.width}px;height:${r.height}px;background-image:url(${w.zimg});opacity:1`;
-  requestAnimationFrame(()=>{fx.classList.add("go");});
-  const img=new Image(), dep=new Image(); let n=0; const ready=()=>{if(++n<2)return; pvStart(img,dep); setTimeout(()=>{fx.style.opacity=0;fx.classList.remove("go");},900);};
+  const fx=document.getElementById("pvfly"); fx.style.cssText="left:0;top:0;width:100vw;height:100vh;background:#131719;opacity:1;transition:opacity .45s"; const img=new Image(), dep=new Image(); let n=0; const ready=()=>{if(++n<2)return; pvStart(img,dep); requestAnimationFrame(()=>{fx.style.opacity=0;});};
   img.onload=ready; dep.onload=ready; img.src=w.zimg; dep.src=w.zimg.replace(".jpg","_depth.png");
   pvSound(PORTALS[key].snd); pvVoices(key);
 }
 function pvStart(img,dep){
   const cv=document.getElementById("pvc"); const gl=cv.getContext("webgl"); if(!gl){return;} PV.gl=gl;
   const vs="attribute vec2 p;varying vec2 v;void main(){v=p*.5+.5;v.y=1.-v.y;gl_Position=vec4(p,0,1);}";
-  const fs="precision mediump float;varying vec2 v;uniform sampler2D tI,tD;uniform vec2 m;uniform float z,ar,iar,t,yaw,pit;const float SPAN=2.2;void main(){vec2 q=(v-.5)*2.;float fovh=1.05/z*min(1.,ar/1.25);float ang=yaw+atan(q.x*tan(fovh*.5));float ux=ang/SPAN+.5;float vh=SPAN/iar;float h=q.y*tan(fovh*.5)/ar/cos(ang-yaw);float uy=.5+(h+pit)/vh*1.;vec2 uv=vec2(ux,uy);float d=texture2D(tD,clamp(uv,0.,1.)).r;vec2 o=(m-.5)*vec2(.05,.035)*(d-.35);uv+=o;vec4 c=texture2D(tI,clamp(uv,0.,1.));float ex=smoothstep(0.,.06,uv.x)*smoothstep(1.,.94,uv.x)*smoothstep(0.,.05,uv.y)*smoothstep(1.,.95,uv.y);float vg=smoothstep(1.35,.45,length(q*vec2(.8,1.)));float fl=.97+.03*sin(t*1.7)+.015*sin(t*4.3);gl_FragColor=vec4(c.rgb*ex*vg*fl,1.);}";
+  const fs="precision mediump float;varying vec2 v;uniform sampler2D tI,tD;uniform vec2 m;uniform float z,ar,iar,t,yaw,pit,fr;const float SPAN=2.2;void main(){vec2 q=(v-.5)*2.;float fovh=1.05/z*min(1.,ar/1.25);float ang=yaw+atan(q.x*tan(fovh*.5));float ux=ang/SPAN+.5;float vh=SPAN/iar;float h=q.y*tan(fovh*.5)/ar/cos(ang-yaw);float uy=.5+(h+pit)/vh;vec2 uv=vec2(ux,uy);vec2 e=max(-uv,uv-1.);float out1=max(e.x,e.y*vh/SPAN);vec3 wall=vec3(.075,.085,.09);if(out1>0.){float bw=.035;vec3 gold=mix(vec3(.55,.41,.16),vec3(.86,.69,.35),smoothstep(0.,bw,out1)*(.6+.4*sin(out1*180.)));vec3 col=out1<bw?gold:wall;gl_FragColor=vec4(col*fr+wall*(1.-fr)*0.,1.);return;}float d=texture2D(tD,uv).r;vec2 o=(m-.5)*vec2(.05,.035)*(d-.35)*(1.-fr);vec4 c=texture2D(tI,clamp(uv+o,0.,1.));float ex=smoothstep(0.,.06,uv.x)*smoothstep(1.,.94,uv.x)*smoothstep(0.,.05,uv.y)*smoothstep(1.,.95,uv.y);ex=mix(ex,1.,fr);float vg=mix(smoothstep(1.35,.45,length(q*vec2(.8,1.))),1.,fr*.7);float fl=.97+.03*sin(t*1.7)+.015*sin(t*4.3);gl_FragColor=vec4(c.rgb*ex*vg*fl,1.);}";
   const sh=(t,src)=>{const s=gl.createShader(t);gl.shaderSource(s,src);gl.compileShader(s);return s;};
   const pr=gl.createProgram();gl.attachShader(pr,sh(gl.VERTEX_SHADER,vs));gl.attachShader(pr,sh(gl.FRAGMENT_SHADER,fs));gl.linkProgram(pr);gl.useProgram(pr);
   const b=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,b);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,1,-1,-1,1,1,1]),gl.STATIC_DRAW);
@@ -631,9 +628,9 @@ function pvStart(img,dep){
   const U=n=>gl.getUniformLocation(pr,n); const iar=img.width/img.height; PV.t0=performance.now();
   const red=matchMedia("(prefers-reduced-motion: reduce)").matches;
   const frame=now=>{ if(!PV.gl)return; const dpr=Math.min(2,devicePixelRatio||1); const W=cv.clientWidth*dpr,H=cv.clientHeight*dpr; if(cv.width!==W||cv.height!==H){cv.width=W;cv.height=H;gl.viewport(0,0,W,H);}
-    const t=(now-PV.t0)/1000; if(PV.idle&&!red){PV.tyaw=.55*Math.sin(t*.16);PV.tpit=.06*Math.sin(t*.21);PV.tx=.5+.3*Math.sin(t*.35);PV.ty=.5+.2*Math.sin(t*.27+1);}
+    const t=(now-PV.t0)/1000; const P0=red?1:Math.min(1,t/2.4); if(PV.idle&&!red&&P0>=1){const ti=(now-(PV.t0i||now))/1000; PV.tyaw=.55*Math.sin(ti*.16);PV.tpit=.06*Math.sin(ti*.21);PV.tx=.5+.3*Math.sin(ti*.35);PV.ty=.5+.2*Math.sin(ti*.27+1);} if(false){PV.tyaw=.55*Math.sin(t*.16);PV.tpit=.06*Math.sin(t*.21);PV.tx=.5+.3*Math.sin(t*.35);PV.ty=.5+.2*Math.sin(t*.27+1);}
     PV.mx+=(PV.tx-PV.mx)*.06; PV.my+=(PV.ty-PV.my)*.06;
-    const z=red?1.15:1.0+Math.min(1,t/2.5)*0.15;
+    const P=red?1:Math.min(1,t/2.4); const E=P<.5?4*P*P*P:1-Math.pow(-2*P+2,3)/2; const z=0.4+E*0.75; gl.uniform1f(U("fr"),Math.max(0,1-E*1.6)); if(P<1){PV.tyaw=PV.yaw=0;PV.tpit=PV.pit=0;PV.t0i=now;}
     PV.yaw+=(PV.tyaw-PV.yaw)*.07; PV.pit+=(PV.tpit-PV.pit)*.07; gl.uniform1f(U("yaw"),PV.yaw); gl.uniform1f(U("pit"),PV.pit); gl.uniform2f(U("m"),PV.mx,PV.my);gl.uniform1f(U("z"),z);gl.uniform1f(U("ar"),W/H);gl.uniform1f(U("iar"),iar);gl.uniform1f(U("t"),red?0:t);
     gl.drawArrays(gl.TRIANGLE_STRIP,0,4); PV.raf=requestAnimationFrame(frame);};
   PV.idle=true; PV.yaw=PV.tyaw=0; PV.pit=PV.tpit=0; PV.raf=requestAnimationFrame(frame);
