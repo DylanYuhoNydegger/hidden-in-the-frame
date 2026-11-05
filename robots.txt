@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://dylanyuhonydegger.github.io/hidden-in-the-frame/sitemap.xml

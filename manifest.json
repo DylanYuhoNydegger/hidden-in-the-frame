@@ -1,0 +1,1 @@
+{"name": "Hidden in the Frame", "short_name": "Hidden Frame", "start_url": "./", "display": "standalone", "background_color": "#ECEDEA", "theme_color": "#2C3A3F", "icons": [{"src": "icon.svg", "sizes": "any", "type": "image/svg+xml"}]}

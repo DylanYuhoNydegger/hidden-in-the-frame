@@ -1,0 +1,689 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Which paintings should you see in a museum – and what is hidden in them? Free museum guides for art lovers who aren't experts. German · English · Japanese.">
+<meta property="og:title" content="Hidden in the Frame">
+<meta property="og:description" content="The must-see paintings of famous museums, their stories and the hidden details to look for. Free guides in German, English and Japanese.">
+<meta property="og:image" content="https://dylanyuhonydegger.github.io/hidden-in-the-frame/og.jpg">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://dylanyuhonydegger.github.io/hidden-in-the-frame/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#2C3A3F">
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px system-ui,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Hidden in the Frame</title>
+</head>
+<body>
+
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;0,6..96,700;1,6..96,500&family=Work+Sans:wght@400;500;600&family=Noto+Serif+JP:wght@500;700&display=swap">
+<style>
+/* Layout: a salon-hung gallery wall opens the page; a pinned world map leads into each museum; museum pages read like wall labels */
+:root{
+  --wall:#ECEDEA; --plaster:#F7F7F4; --ink:#1E2326; --stone:#5E6E74; --land:#D3D9D8; --gold:#9A7426; --gold-ink:#7A5A16; --line:#D6DAD8; --salon:#2C3A3F; --salon-ink:#EDEBE4; --frame:#B38B3A;
+  --display:"Bodoni Moda","Didot","Bodoni 72",Georgia,serif;
+  --body:"Work Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --jp:"Hiragino Sans","Noto Sans JP","Yu Gothic",sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--wall:#15191B;--plaster:#1C2124;--ink:#E7E6E1;--stone:#9AAAB0;--land:#2E373B;--gold:#D2AE5E;--gold-ink:#E2C27A;--line:#2C3438;--salon:#101517;--salon-ink:#EDEBE4;--frame:#C9A24E;color-scheme:dark}}
+:root[data-theme="dark"]{--wall:#15191B;--plaster:#1C2124;--ink:#E7E6E1;--stone:#9AAAB0;--land:#2E373B;--gold:#D2AE5E;--gold-ink:#E2C27A;--line:#2C3438;--salon:#101517;--salon-ink:#EDEBE4;--frame:#C9A24E;color-scheme:dark}
+body{background:var(--wall);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6}
+body.ja{font-family:var(--body),var(--jp)}
+body.ja h1,body.ja h2,body.ja h3,body.ja .meaning,body.ja .label .n,body.ja .facts .y{font-family:"Noto Serif JP",var(--jp),serif;font-style:normal}
+body.ja em,body.ja i{font-style:normal}
+body.ja .salon h1{font-size:clamp(1.6rem,3.4vw,2.7rem);line-height:1.4;letter-spacing:.04em}
+body.ja .salon h1 .ln{display:block;white-space:nowrap}
+body.ja h1,body.ja h2,body.ja h3,body.ja p,body.ja li,body.ja .m h3{word-break:auto-phrase;line-break:strict}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--wall)}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+header.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--wall);border-bottom:1px solid var(--line)}
+header.bar .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:12px}
+.logo{font-family:var(--display);font-weight:700;font-size:1.35rem;color:var(--ink);text-decoration:none}
+.logo i{color:var(--gold);font-style:italic;font-weight:500}
+.langs{display:flex;gap:4px}
+.langs button{font:500 .78rem/1 var(--body);letter-spacing:.08em;padding:8px 10px;border:1px solid var(--line);background:transparent;color:var(--stone);border-radius:2px;cursor:pointer}
+.langs button[aria-pressed="true"]{background:var(--ink);color:var(--wall);border-color:var(--ink)}
+button:focus-visible,a:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.eyebrow{font:600 .72rem/1.3 var(--body);letter-spacing:.16em;text-transform:uppercase;color:var(--gold-ink)}
+h1,h2,h3{font-family:var(--display);font-weight:500;text-wrap:balance;margin:0}
+
+/* salon hero */
+.salon{background:var(--salon);color:var(--salon-ink)}
+.salon .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.35fr);gap:36px;align-items:center;padding-block:48px}
+@media (max-width:820px){.salon .wrap{grid-template-columns:minmax(0,1fr);gap:24px;padding-block:28px}}
+.salon h1{font-size:clamp(2.3rem,5.6vw,4rem);line-height:1.04;color:var(--salon-ink)}
+.salon h1 em{color:var(--frame);font-style:italic}
+.salon p{color:color-mix(in srgb,var(--salon-ink) 78%,transparent);font-size:1.05rem;max-width:52ch;margin:14px 0 0}
+.salon .eyebrow{color:var(--frame)}
+.hang{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));grid-auto-rows:44px;gap:10px}
+.hang a{display:block;border:5px solid var(--frame);box-shadow:inset 0 0 0 2px rgba(0,0,0,.35),0 6px 14px rgba(0,0,0,.35);background:#111 center/cover no-repeat;min-width:0}
+.hang a.round{border-radius:50%}
+@media (prefers-reduced-motion:no-preference){.hang a{transition:transform .3s ease}.hang a:hover{transform:translateY(-3px)}}
+.cta{display:inline-flex;margin-top:20px;gap:10px;flex-wrap:wrap}
+.btn{font:600 .85rem/1 var(--body);letter-spacing:.04em;padding:12px 16px;border-radius:2px;text-decoration:none;cursor:pointer;border:1px solid var(--frame);background:var(--frame);color:#1a1408}
+.btn.ghost{background:transparent;color:inherit}
+.btn[disabled],.btn[aria-disabled="true"]{opacity:.5;cursor:default}
+
+/* map */
+.mapsec{padding-block:44px 24px;display:grid;gap:14px}
+.mapsec h2{font-size:clamp(1.6rem,4vw,2.4rem)}
+.mapbox{position:relative;background:var(--plaster);border:1px solid var(--line);overflow:hidden}
+.mapbox svg{display:block;width:100%;height:auto;touch-action:none}
+.land{fill:var(--land);stroke:var(--wall);stroke-width:.5}
+.pin{cursor:default}
+.pin circle.dot{fill:var(--stone)}
+.pin.live{cursor:pointer}
+.pin.live circle.dot{fill:var(--gold)}
+.pin circle.halo{fill:none;stroke:var(--gold);stroke-width:1.5}
+.pin text{font:600 11px var(--body);fill:var(--ink);paint-order:stroke;stroke:var(--plaster);stroke-width:3px}
+.pin.soon text{fill:var(--stone);font-weight:500}
+@media (prefers-reduced-motion:no-preference){.pin circle.halo{animation:pulse 2.4s ease-out infinite;transform-box:fill-box;transform-origin:center}@keyframes pulse{0%{opacity:.9;transform:scale(1)}100%{opacity:0;transform:scale(3)}}}
+.mapctl{position:absolute;right:10px;top:10px;display:flex;gap:4px}
+.mapctl button{font:500 .75rem/1 var(--body);padding:7px 9px;border:1px solid var(--line);background:var(--plaster);color:var(--ink);border-radius:2px;cursor:pointer}
+.legend{display:flex;gap:18px;flex-wrap:wrap;font-size:.85rem;color:var(--stone)}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px;vertical-align:-1px;background:var(--stone)}
+.legend span.l::before{background:var(--gold)}
+.museums{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px;padding-block:8px 56px}
+.m{display:grid;gap:4px;padding:16px;border:1px solid var(--line);background:var(--plaster);text-decoration:none;color:var(--ink);min-width:0}
+.m h3{font-size:1.25rem}.m .city{color:var(--stone);font-size:.9rem}
+.m .st{font:600 .7rem/1 var(--body);letter-spacing:.14em;text-transform:uppercase;margin-top:8px}
+.m.live .st{color:var(--gold-ink)}.m.soon{opacity:.62}.m.soon .st{color:var(--stone)}.m.live:hover{border-color:var(--gold)}
+
+/* museum page */
+.mhead{padding-block:36px 8px;display:grid;gap:10px}
+.mhead h1{font-size:clamp(2.1rem,5.4vw,3.4rem);line-height:1.06}
+.mhead p{margin:0;color:var(--stone);max-width:64ch}
+.back{color:var(--stone);text-decoration:none;font-size:.9rem}
+.panel{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:20px;padding-block:20px 8px}
+@media (max-width:820px){.panel{grid-template-columns:minmax(0,1fr)}}
+.box{background:var(--plaster);border:1px solid var(--line);padding:18px;display:grid;gap:12px;align-content:start;min-width:0}
+.box h2{font-size:1.4rem}
+.facts{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.facts li{display:grid;grid-template-columns:70px minmax(0,1fr);gap:12px}
+.facts .y{font-family:var(--display);font-size:1.15rem;color:var(--gold-ink);font-variant-numeric:tabular-nums}
+.visit{display:grid;gap:8px;margin:0}
+.visit div{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.3fr);gap:10px;border-bottom:1px solid var(--line);padding-bottom:8px}
+.visit dt{color:var(--stone);font-size:.88rem}.visit dd{margin:0;font-size:.92rem}
+.small{font-size:.8rem;color:var(--stone);margin:0}
+.small a{color:var(--gold-ink)}
+.dl{display:flex;gap:8px;flex-wrap:wrap}
+.dl .btn{background:var(--ink);border-color:var(--ink);color:var(--wall)}
+.dl .btn.ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+.status{font-size:.82rem;color:var(--stone);min-height:1.2em;margin:0}
+.index{display:flex;flex-wrap:wrap;gap:6px;padding-block:20px 24px}
+.index a{font-size:.85rem;color:var(--ink);text-decoration:none;padding:6px 10px;border:1px solid var(--line);border-radius:2px;background:var(--plaster)}
+.index a span{color:var(--gold-ink);margin-right:6px;font-variant-numeric:tabular-nums}
+article.work{padding-block:36px;border-top:1px solid var(--line);display:grid;gap:18px;scroll-margin-top:80px}
+.label{display:grid;gap:2px}
+.label .n{font-family:var(--display);font-style:italic;color:var(--gold);font-size:1.1rem}
+.label h2{font-size:clamp(1.6rem,4vw,2.3rem);line-height:1.12}
+.label .meta{color:var(--stone);font-size:.92rem}
+figure{margin:0;background:var(--plaster);border:1px solid var(--line);padding:10px}
+figure img{display:block;width:100%;height:auto}
+figure figcaption{font-size:.78rem;color:var(--stone);padding-top:8px}
+.cols{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:28px;align-items:start}
+@media (max-width:760px){.cols{grid-template-columns:minmax(0,1fr)}}
+.story p{margin:0;max-width:62ch}
+ol.det{list-style:none;margin:8px 0 0;padding:0;display:grid;gap:12px;counter-reset:d}
+ol.det li{display:grid;grid-template-columns:28px minmax(0,1fr);gap:8px}
+ol.det li::before{counter-increment:d;content:counter(d);display:grid;place-items:center;width:24px;height:24px;border-radius:50%;background:var(--gold);color:var(--wall);font:600 .78rem/1 var(--body);margin-top:2px}
+.meaning{margin:0;padding:16px 18px;background:var(--plaster);border:1px solid var(--line);font-family:var(--display);font-style:italic;font-size:1.08rem;line-height:1.5}
+.meaning b{font-family:var(--body);font-style:normal;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-ink);display:block;margin-bottom:6px;font-weight:600}
+footer{border-top:1px solid var(--line);padding-block:28px;color:var(--stone);font-size:.82rem}
+footer p{margin:0 0 6px;max-width:72ch}
+
+.pic{position:relative;width:100%;max-width:100%}
+.pic img{position:absolute;inset:0;width:100%;height:100%}
+.hot{position:absolute;transform:translate(-50%,-50%);aspect-ratio:1;border-radius:50%;border:3px solid var(--gold);background:transparent;box-shadow:0 0 0 1.5px rgba(0,0,0,.55),inset 0 0 0 1.5px rgba(0,0,0,.35);cursor:zoom-in;padding:0;min-width:28px}
+.hot span{position:absolute;right:-4px;top:-4px;width:22px;height:22px;border-radius:50%;background:var(--gold);color:#1a1408;font:700 .72rem/22px var(--body);text-align:center;box-shadow:0 0 0 1.5px rgba(0,0,0,.5)}
+.hot:hover,.hot:focus-visible{border-color:#fff}
+.look{font:600 .78rem/1 var(--body);color:var(--gold-ink);background:none;border:0;padding:4px 0;cursor:pointer;white-space:nowrap}
+.tour{display:grid;gap:12px}
+.seg{display:flex;flex-wrap:wrap;gap:6px}
+.seg button{font:500 .85rem/1 var(--body);padding:10px 12px;border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:2px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--wall);border-color:var(--ink)}
+ol.route{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:6px}
+ol.route a{display:grid;grid-template-columns:28px minmax(0,1fr);gap:2px 8px;padding:10px;border:1px solid var(--line);text-decoration:none;color:var(--ink);background:var(--wall)}
+ol.route .rn{grid-row:1/3;font-family:var(--display);font-size:1.3rem;color:var(--gold-ink);font-variant-numeric:tabular-nums}
+ol.route .rr{font-size:.8rem;color:var(--stone)}
+.zv{position:fixed;inset:0;z-index:20;background:rgba(8,10,11,.94);display:grid;grid-template-rows:auto minmax(0,1fr) auto;color:#EDEBE4;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+.zv[hidden]{display:none!important}
+.zv .zt{display:flex;justify-content:space-between;align-items:center;gap:10px;padding-block:10px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.zv .zt span{font:500 .85rem var(--body);opacity:.8}
+.zv button.zb{font:600 .85rem/1 var(--body);padding:10px 14px;border:1px solid rgba(255,255,255,.3);background:transparent;color:#EDEBE4;border-radius:2px;cursor:pointer}
+.zs{position:relative;overflow:hidden;touch-action:none}
+.zs .zi{position:absolute;left:0;top:0;transform-origin:0 0;will-change:transform}
+.zs .zi img{display:block;width:100%;height:100%}
+.zs .ring{position:absolute;border:3px solid #E8C770;border-radius:50%;box-shadow:0 0 0 2px rgba(0,0,0,.6),0 0 40px rgba(0,0,0,.6);pointer-events:none}
+@media (prefers-reduced-motion:no-preference){.zs .zi{transition:transform .7s cubic-bezier(.4,0,.2,1)}.zs .ring{transition:all .7s cubic-bezier(.4,0,.2,1)}}
+.zp{max-height:38vh;overflow:auto;padding-block:12px 14px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));border-top:1px solid rgba(255,255,255,.15)}
+.zp p{margin:0 auto;max-width:68ch;font-size:1rem;line-height:1.55}
+.zp .zn{display:flex;gap:8px;justify-content:center;margin-top:12px}
+
+.badges{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.pill{font:600 .7rem/1 var(--body);letter-spacing:.06em;padding:6px 9px;border-radius:999px;border:1px solid var(--line);color:var(--stone);text-decoration:none}
+.pill.on{color:#2F6B4F;border-color:color-mix(in srgb,#2F6B4F 40%,transparent)}
+.pill.loan,.pill.resto{color:#9A4B1C;border-color:color-mix(in srgb,#9A4B1C 40%,transparent)}
+.pill.yt{color:var(--gold-ink);border-color:var(--gold)}
+.gamebtn{justify-self:start;background:transparent;color:var(--ink);border-color:var(--gold)}
+.gv{position:fixed;inset:0;z-index:21;background:rgba(8,10,11,.95);color:#EDEBE4;display:grid;grid-template-rows:auto auto minmax(0,1fr) auto;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+.gv[hidden]{display:none!important}
+.gq{text-align:center;padding:6px 16px 10px;font-size:1.05rem}
+.gq b{color:#E8C770}
+.gs{position:relative;display:grid;place-items:center;overflow:hidden;padding:0 12px}
+.gs .gw{position:relative;max-width:100%;max-height:100%}
+.gs img{display:block;max-width:100%;max-height:calc(100vh - 230px);cursor:crosshair;user-select:none;-webkit-user-select:none}
+.gs .gring{position:absolute;border:3px solid #E8C770;border-radius:50%;box-shadow:0 0 0 2px rgba(0,0,0,.6);transform:translate(-50%,-50%);pointer-events:none}
+.gs .gtap{position:absolute;width:18px;height:18px;border-radius:50%;border:2px solid #fff;transform:translate(-50%,-50%);pointer-events:none}
+.gf{padding:10px 16px 14px;text-align:center;display:grid;gap:10px;justify-items:center}
+.gf p{margin:0;max-width:64ch;font-size:.95rem}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .pill.on{color:#7CC4A0}:root:not([data-theme="light"]) .pill.loan,:root:not([data-theme="light"]) .pill.resto{color:#E59A6A}}
+:root[data-theme="dark"] .pill.on{color:#7CC4A0}:root[data-theme="dark"] .pill.loan,:root[data-theme="dark"] .pill.resto{color:#E59A6A}
+
+.ap{display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px;align-items:center;padding:12px 14px;background:var(--plaster);border:1px solid var(--line)}
+.apb{width:44px;height:44px;border-radius:50%;border:0;background:var(--gold);color:var(--wall);display:grid;place-items:center;cursor:pointer;flex:none}
+.apb svg{width:20px;height:20px;fill:currentColor}
+.apb .i-pause{display:none}.ap.playing .apb .i-play{display:none}.ap.playing .apb .i-pause{display:inline}
+.apm{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 12px;align-items:center;min-width:0}
+.apt{font-size:.82rem;color:var(--stone);grid-column:1/-1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.apt b{color:var(--ink);font-weight:600}
+.aptime{font-size:.78rem;color:var(--stone);font-variant-numeric:tabular-nums;white-space:nowrap}
+.apr{-webkit-appearance:none;appearance:none;width:100%;height:4px;border-radius:2px;background:linear-gradient(var(--gold),var(--gold)) 0/var(--p,0%) 100% no-repeat,var(--line);cursor:pointer;margin:0}
+.apr::-webkit-slider-thumb{-webkit-appearance:none;width:14px;height:14px;border-radius:50%;background:var(--gold);border:2px solid var(--plaster)}
+.apr::-moz-range-thumb{width:12px;height:12px;border-radius:50%;background:var(--gold);border:2px solid var(--plaster)}
+
+.about{padding-block:8px 64px}
+.about-in{display:grid;gap:12px;max-width:68ch;border-top:1px solid var(--line);padding-top:36px}
+.about-in h2{font-size:clamp(1.6rem,4vw,2.3rem)}
+.about-in p{margin:0}
+
+.look .leadp{font-size:1.08rem;max-width:62ch}
+ol.steps{list-style:none;margin:16px 0 8px;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}
+ol.steps li{display:grid;grid-template-columns:44px minmax(0,1fr);gap:12px;padding:16px;background:var(--plaster);border:1px solid var(--line)}
+ol.steps .sn{font-family:var(--display);font-size:2rem;line-height:1;color:var(--gold)}
+ol.steps h3{font-size:1.15rem;line-height:1.25;margin-bottom:6px}
+ol.steps p{margin:0;font-size:.95rem}
+ul.tips{margin:0;padding-left:18px;display:grid;gap:8px}
+
+.guided{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:16px;align-items:center;margin-top:10px;padding:16px;border:1px solid var(--gold);background:var(--plaster)}
+@media (max-width:720px){.guided{grid-template-columns:minmax(0,1fr)}}
+.guided .ap{border:0;padding:0;background:transparent}
+
+.apsub{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:4px 10px;align-items:center;font-size:.76rem;color:var(--stone)}
+.apskip{font:600 .76rem/1 var(--body);color:var(--gold-ink);background:none;border:0;padding:4px 0;cursor:pointer}
+
+.hangwrap{position:relative;padding-bottom:30px;--x:60%;--y:35%;--r:150px}
+.dark{position:absolute;inset:-14px;pointer-events:none;background:radial-gradient(circle var(--r) at var(--x) var(--y),rgba(16,21,23,0) 0,rgba(16,21,23,0) 45%,rgba(9,12,13,.93) 100%);transition:background .15s linear}
+.hangwrap.lit .dark{background:radial-gradient(circle var(--r) at var(--x) var(--y),rgba(16,21,23,0) 0,rgba(16,21,23,0) 45%,rgba(9,12,13,.93) 100%)}
+.sig{position:absolute;right:4px;bottom:2px;font:italic 500 .8rem/1 var(--display);letter-spacing:.12em;color:#8C7A55;background:none;border:0;padding:4px;cursor:pointer;opacity:.75}
+.sig i{font-style:italic}
+.lamp{position:absolute;left:0;right:0;bottom:-26px;margin:0;text-align:center;font-size:.78rem;color:color-mix(in srgb,var(--salon-ink) 60%,transparent)}
+.found{position:absolute;left:8px;right:8px;bottom:36px;margin:0;padding:12px 14px;background:var(--plaster);color:var(--ink);border:1px solid var(--frame);font-size:.88rem;z-index:2;box-shadow:0 8px 24px rgba(0,0,0,.4)}
+@media (prefers-reduced-motion: reduce){.dark{background:rgba(9,12,13,.25)!important}}
+
+.logo{display:inline-flex;align-items:center;gap:10px}
+.logo .lf{width:30px;height:24px;color:var(--gold);flex:none}
+.logo span{white-space:nowrap}
+@media (max-width:440px){.logo{font-size:1.1rem}.logo .lf{width:24px;height:20px}}
+.hang a.tilt{animation:tilt 2.2s cubic-bezier(.3,1.6,.5,1)}
+@keyframes tilt{0%{transform:rotate(0)}18%{transform:rotate(-9deg)}40%{transform:rotate(6deg)}60%{transform:rotate(-3deg)}80%{transform:rotate(1.5deg)}100%{transform:rotate(0)}}
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:30;background:var(--ink);color:var(--wall);padding:12px 16px;border-radius:2px;font-size:.9rem;max-width:min(92vw,440px);text-align:center;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+.swbox{display:flex;align-items:center;gap:10px;margin-top:16px}
+.swl{font:600 .66rem/1 var(--body);letter-spacing:.18em;text-transform:uppercase;color:var(--stone)}
+.sw{background:none;border:0;padding:0;cursor:pointer}
+.sw .plate{position:relative;display:block;width:30px;height:46px;border-radius:4px;background:linear-gradient(145deg,#E2C98A,#A9843F 55%,#7E5F28);box-shadow:inset 0 1px 0 rgba(255,255,255,.5),inset 0 -2px 3px rgba(0,0,0,.35),0 2px 5px rgba(0,0,0,.3)}
+.sw .screw{position:absolute;left:50%;width:5px;height:5px;margin-left:-2.5px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#F3E3B5,#6E5222)}
+.sw .screw.t{top:4px}.sw .screw.b{bottom:4px}
+.sw .lever{position:absolute;left:50%;top:50%;width:8px;height:18px;margin:-9px 0 0 -4px;border-radius:4px;background:linear-gradient(90deg,#2A2018,#5A4630 50%,#2A2018);box-shadow:0 2px 2px rgba(0,0,0,.45);transform-origin:50% 50%;transform:perspective(40px) rotateX(28deg) translateY(-3px);transition:transform .18s cubic-bezier(.5,1.8,.6,1)}
+.sw[aria-pressed="true"] .lever{transform:perspective(40px) rotateX(-28deg) translateY(3px)}
+.sw:focus-visible .plate{outline:2px solid var(--gold);outline-offset:3px}
+.nightveil{position:fixed;inset:0;z-index:15;pointer-events:none;background:radial-gradient(circle 170px at var(--nx,50%) var(--ny,40%),rgba(0,0,0,0) 0,rgba(0,0,0,0) 40%,rgba(4,6,7,.95) 100%)}
+body.night footer{position:relative;z-index:16}
+@media (prefers-reduced-motion: reduce){.hang a.tilt{animation:none}}
+
+.hang a.empty{background-image:radial-gradient(ellipse at 50% 40%,rgba(255,255,255,.05),rgba(0,0,0,.25)),repeating-linear-gradient(0deg,rgba(255,255,255,.025) 0 1px,transparent 1px 3px),repeating-linear-gradient(90deg,rgba(255,255,255,.02) 0 1px,transparent 1px 3px)!important;background-color:#2B2620!important}
+.fig{position:absolute;z-index:14;cursor:pointer;background:none;border:0;padding:0;filter:drop-shadow(0 10px 14px rgba(0,0,0,.6))}
+.fig img{display:block;width:100%;height:auto;pointer-events:none}
+@media (prefers-reduced-motion:no-preference){.fig{animation:sway var(--d,6s) ease-in-out infinite alternate}@keyframes sway{0%{transform:translate(0,0) rotate(-3deg)}50%{transform:translate(var(--mx,14px),-10px) rotate(2deg)}100%{transform:translate(calc(var(--mx,14px)*-1),4px) rotate(-1deg)}}}
+
+.hours{font-size:.72rem;color:var(--stone);border:1px solid var(--line);padding:5px 8px;border-radius:2px;font-variant-numeric:tabular-nums}
+.dust{position:absolute;left:4%;top:8%;width:28%;height:44%;z-index:1;cursor:grab;touch-action:none;border-radius:6px}
+.dusthint{position:absolute;left:5%;top:calc(52% + 4px);z-index:1;font:600 .7rem/1.2 var(--body);color:#fff;background:rgba(0,0,0,.55);padding:4px 7px;border-radius:2px;pointer-events:none}
+.pic .hot{z-index:2}
+.rope{position:absolute;left:0;right:0;bottom:6%;height:60px;pointer-events:none;opacity:0;transition:opacity .25s}
+.rope.on{opacity:1}
+.rope svg{width:100%;height:100%}
+.swbox{flex-wrap:wrap}
+
+.pv{position:fixed;inset:0;z-index:40;background:#050607}
+.pv[hidden]{display:none!important}
+#pvc{position:absolute;inset:0;width:100%;height:100%;display:block;touch-action:none;cursor:grab}
+.pvfly{position:fixed;z-index:41;background:center/cover no-repeat;pointer-events:none;transition:all .9s cubic-bezier(.7,0,.2,1),opacity .5s}
+.pvfly.go{left:0!important;top:0!important;width:100vw!important;height:100vh!important;filter:brightness(1.1)}
+.pvbar{position:absolute;left:0;right:0;top:0;z-index:42;display:flex;justify-content:space-between;align-items:center;gap:10px;color:#EDEBE4;background:linear-gradient(rgba(0,0,0,.6),transparent);padding-top:max(10px,env(safe-area-inset-top,0px));padding-bottom:20px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));font-family:var(--display);font-size:1.05rem}
+.pvhint{position:absolute;left:0;right:0;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:42;margin:0;text-align:center;color:rgba(237,235,228,.75);font-size:.82rem}
+body.night .hang a.portal{box-shadow:0 0 0 2px #E8C770,0 0 26px 6px rgba(232,199,112,.55)!important;position:relative;z-index:16}
+@media (prefers-reduced-motion:no-preference){body.night .hang a.portal{animation:glow 2.4s ease-in-out infinite}@keyframes glow{50%{box-shadow:0 0 0 2px #E8C770,0 0 40px 12px rgba(232,199,112,.75)}}}
+.wsk{position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none}
+.wskbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:.78rem;color:var(--stone);margin-top:8px}
+.wskbar button{font:600 .76rem/1 var(--body);color:var(--gold-ink);background:none;border:1px solid var(--line);padding:6px 9px;border-radius:2px;cursor:pointer}
+</style>
+
+<header class="bar"><div class="wrap">
+  <a class="logo" href="#home" aria-label="Hidden in the Frame – Start"><svg class="lf" viewBox="0 0 32 26" aria-hidden="true"><rect x="1.5" y="1.5" width="29" height="23" rx="1" fill="none" stroke="currentColor" stroke-width="3"/><rect x="6" y="6" width="20" height="14" fill="none" stroke="currentColor" stroke-width="1"/><circle cx="20" cy="11" r="2.2" fill="currentColor"/></svg><span>Hidden in the <i>Frame</i></span></a>
+  <div class="langs" role="group" aria-label="Language">
+    <button id="l-de" data-l="de">DE</button><button id="l-en" data-l="en">EN</button><button id="l-ja" data-l="ja">日本語</button>
+  </div>
+</div></header>
+<main id="app"></main>
+<footer><div class="wrap" id="foot"></div></footer>
+
+<div class="zv" id="zv" hidden role="dialog" aria-modal="true" aria-labelledby="zvt">
+  <div class="zt"><span id="zvt"></span><button class="zb" type="button" id="zclose">✕</button></div>
+  <div class="zs" id="zs"><div class="zi" id="zi"><img id="zimg" alt=""></div><div class="ring" id="zring"></div><div class="rope" id="rope" aria-hidden="true"><svg viewBox="0 0 400 60" preserveAspectRatio="none"><rect x="14" y="8" width="8" height="52" fill="#C9A24E"/><rect x="378" y="8" width="8" height="52" fill="#C9A24E"/><circle cx="18" cy="10" r="7" fill="#E2C27A"/><circle cx="382" cy="10" r="7" fill="#E2C27A"/><path d="M22 14 Q200 64 378 14" stroke="#8E1B1B" stroke-width="7" fill="none" stroke-linecap="round"/><path d="M22 12 Q200 60 378 12" stroke="#C0392B" stroke-width="2" fill="none" opacity=".6"/></svg></div></div>
+  <div class="zp"><p id="ztext"></p><div class="zn"><button class="zb" type="button" id="zprev">←</button><button class="zb" type="button" id="zall"></button><button class="zb" type="button" id="znext">→</button></div></div>
+</div>
+<div class="gv" id="gv" hidden role="dialog" aria-modal="true" aria-labelledby="gvt">
+  <div class="zt"><span id="gvt"></span><button class="zb" type="button" id="gclose">✕</button></div>
+  <div class="gq" id="gq" aria-live="polite"></div>
+  <div class="gs"><div class="gw" id="gw"><img id="gimg" alt="" draggable="false"></div></div>
+  <div class="gf"><p id="gfb" aria-live="polite"></p><div class="zn"><button class="zb" type="button" id="gnext"></button></div></div>
+</div>
+<div class="pv" id="pv" hidden role="dialog" aria-modal="true" aria-labelledby="pvt"><canvas id="pvc"></canvas><div class="pvfly" id="pvfly"></div>
+  <div class="pvbar"><span id="pvt"></span><button class="zb" type="button" id="pvx"></button></div><p class="pvhint" id="pvh"></p></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js"></script>
+<script src="data.js"></script>
+<script>
+const YT_URL="";
+const AUDIO_READY=true;
+const DUR={guided:295,primavera:182,venus:169,anbetung:163,urbino:137,verkuendigung:145,tondo:140,venus_urbino:185,bacchus:200,medusa:148,judith:156};
+const INTRO={"primavera": 17, "venus": 16, "anbetung": 15, "urbino": 17, "verkuendigung": 16, "tondo": 16, "venus_urbino": 16, "bacchus": 16, "medusa": 16, "judith": 15};
+const fmt=t=>{t=Math.max(0,Math.round(t));return Math.floor(t/60)+":"+String(t%60).padStart(2,"0");}; // YouTube-Kanal-Link hier eintragen, sobald er existiert
+const UI={
+ de:{inside:"Du stehst jetzt in: %s",pvback:"← Zurück ins Museum",pvhint:"Ziehen oder Maus bewegen, um dich umzusehen · Pfeiltasten ← →",portalhint:"Manche Bilder leuchten. Tippe darauf – und tritt ein.",wingsk:"Ungefähre Skizze, keine echte Aufnahme: So kurz waren Leonardos Flügel ungefähr – der gestrichelte Teil kam später dazu.",wingoff:"Skizze ausblenden",wingon:"Skizze zeigen",hours:"Geöffnet täglich · Nachtführung 0–1 Uhr (deine Ortszeit)",midnight:"Mitternacht. Das Museum ist geschlossen – aber du bist noch drin.",rope:"Bitte nicht so nah! – Ihr Museumswärter",dustdone:"Freigelegt: Leonardo malte kurze, kräftige Flügel wie bei einem Raubvogel. Ein anderer Maler hat sie später nach hinten verlängert – Spuren davon sieht man bei genauem Hinsehen noch.",swl:"Saal-Licht",guard:"Bitte nicht berühren! – Ihr Museumswärter",night:"Nachtführung",nightoff:"Licht an",nighthint:"Du bist jetzt allein im Museum. Taschenlampe an – Licht an mit dem Schalter unten.",lamp:"Bewege die Maus oder den Finger – wie mit einer Taschenlampe im dunklen Museum.",found:"Gefunden! Wie Caravaggio in der Weinkaraffe hat sich auch der Macher dieser Seite versteckt: D·N fecit – „D. N. hat es gemacht“.",abegg:"Wie Caravaggio habe ich mich auf dieser Seite versteckt. Findest du mich?",abtag:"Über das Projekt",abh:"Hallo, ich bin Dylan.",abp:["Ich studiere Elektrotechnik und Informationstechnologie an der ETH Zürich. Mit Kunst habe ich beruflich nichts zu tun – aber ich finde sie spannend.","Die Idee entstand, als meine Eltern in den Uffizien waren: Sie wollten wissen, welche Bilder man gesehen haben muss und was darin eigentlich steckt. Einen Guide, der beides kurz und verständlich erklärt, haben wir nicht gefunden. Also habe ich ihn gemacht.","Hidden in the Frame ist für alle, die Kunst mögen, aber keine Fachleute sind. Ich schreibe auf Deutsch, Englisch und Japanisch, und nach und nach kommen weitere Museen dazu."],abai:"Recherche, Texte und Bilder entstehen mit Unterstützung von KI und werden mit Quellen geprüft. Fehler gefunden? Sag es mir gerne.",tag:"Museumsguides",h1:"Schau genauer hin. Die Werke, die man <em>nicht verpassen</em> darf.",lead:"Für alle, die Kunst lieben, aber keine Fachleute sind: die wichtigsten Werke berühmter Museen, ihre Geschichte und die Details, nach denen man vor dem Bild suchen sollte.",start:"Zu den Uffizien",yt:"YouTube",ytsoon:"YouTube – bald",map:"Weltkarte",maph:"Wähle ein Museum",world:"Welt",europe:"Europa",lg1:"Guide verfügbar",lg2:"In Arbeit",live:"Guide lesen",soon:"Bald",back:"← Alle Museen",works:"Werke",story:"Die Geschichte",det:"Details im Bild",mean:"Was das Bild sagt",intro:"Die gelben Kreise zeigen, wo die Details sind. Die Nummer im Bild entspricht der Nummer im Text.",fig:"Gemeinfrei. Markierungen: Hidden in the Frame.",about:"Über die Uffizien",visit:"Besuch planen",pdf:"Guide als PDF – gratis",pdfnote:"Alle Werke mit Geschichte und markierten Details, zum Ausdrucken oder fürs Handy.",dlna:"Download ist in dieser Ansicht nicht verfügbar.",saved:"Gespeichert.",declined:"Download abgebrochen.",must:"Die Must-Sees",checked:"Stand: November 2026. Zeiten und Preise ändern sich – vor dem Besuch auf",check2:"prüfen.",foot1:"Alle Gemälde sind gemeinfrei. Texte und Markierungen: Hidden in the Frame.",foot2:"Werke werden manchmal verliehen oder umgehängt. Stand der Angaben: November 2026."},
+ en:{inside:"You are now inside: %s",pvback:"← Back to the museum",pvhint:"Drag or move your mouse to look around · arrow keys ← →",portalhint:"Some paintings are glowing. Tap one – and step inside.",wingsk:"Rough sketch, not a real scan: roughly how short Leonardo’s wings were – the dashed part was added later.",wingoff:"Hide sketch",wingon:"Show sketch",hours:"Open daily · Night tour 12–1 am (your local time)",midnight:"Midnight. The museum is closed – but you are still inside.",rope:"Please, not so close! – Your museum guard",dustdone:"Uncovered: Leonardo painted short, powerful wings like a bird of prey’s. Another painter later lengthened them – look closely and you can still see traces.",swl:"Gallery lights",guard:"Please do not touch! – Your museum guard",night:"Night tour",nightoff:"Lights on",nighthint:"You are alone in the museum now. Torch on – turn the lights back on with the switch at the bottom.",lamp:"Move your mouse or finger – like a torch in a dark museum.",found:"Found! Just like Caravaggio in the wine carafe, the maker of this site hid himself here: D·N fecit – “D. N. made it”.",abegg:"Like Caravaggio, I have hidden myself somewhere on this site. Can you find me?",abtag:"About the project",abh:"Hi, I'm Dylan.",abp:["I study electrical engineering and information technology at ETH Zurich. Art isn't my job – but I find it fascinating.","The idea came when my parents visited the Uffizi: they wanted to know which paintings you have to see and what is actually hidden in them. We couldn't find a guide that explained both briefly and clearly. So I made one.","Hidden in the Frame is for everyone who likes art but isn't an expert. I write in German, English and Japanese, and more museums are added step by step."],abai:"Research, texts and images are made with the help of AI and checked against sources. Spotted a mistake? Please let me know.",tag:"Museum guides",h1:"Look closer. The works you <em>must not miss</em>.",lead:"For anyone who loves art but isn't an expert: the key works of famous museums, their stories, and the details to look for when you stand in front of them.",start:"Explore the Uffizi",yt:"YouTube",ytsoon:"YouTube – soon",map:"World map",maph:"Pick a museum",world:"World",europe:"Europe",lg1:"Guide available",lg2:"In progress",live:"Read the guide",soon:"Soon",back:"← All museums",works:"works",story:"The story",det:"Details in the picture",mean:"What it says",intro:"The yellow circles show where each detail is. The number in the picture matches the number in the text.",fig:"Public domain. Markings: Hidden in the Frame.",about:"About the Uffizi",visit:"Plan your visit",pdf:"Guide as PDF – free",pdfnote:"Every work with its story and marked details, to print or read on your phone.",dlna:"Downloads aren't available in this view.",saved:"Saved.",declined:"Download cancelled.",must:"The must-sees",checked:"As of November 2026. Hours and prices change – check",check2:"before you go.",foot1:"All paintings are in the public domain. Texts and markings: Hidden in the Frame.",foot2:"Works are sometimes lent out or rehung. Information as of November 2026."},
+ ja:{inside:"あなたは今、《%s》の中にいます",pvback:"← 美術館に戻る",pvhint:"ドラッグまたはマウスを動かして見回せます・矢印キー ← →",portalhint:"光っている絵があります。タップして、中へ入ってみましょう。",wingsk:"おおよそのスケッチで、実際の調査画像ではありません。レオナルドの翼はこのくらい短く、点線の部分は後から描き足されました。",wingoff:"スケッチを隠す",wingon:"スケッチを表示",hours:"毎日開館・ナイトツアー 0〜1時（現地時間）",midnight:"真夜中。美術館は閉館しました。でも、あなたはまだ中にいます。",rope:"近づきすぎないでください！ ― 警備員より",dustdone:"発見：レオナルドは猛禽のような短く力強い翼を描きました。のちに別の画家が後ろへ長く描き足したのです。よく見ると、その痕跡が今も残っています。",swl:"展示室の照明",guard:"作品に触れないでください！ ― 警備員より",night:"ナイトツアー",nightoff:"明かりをつける",nighthint:"今、美術館にいるのはあなただけ。懐中電灯をどうぞ。下のスイッチで明かりが戻ります。",lamp:"マウスや指を動かしてみてください。暗い美術館で懐中電灯を照らすように。",found:"見つけた！ワインのカラフェに隠れたカラヴァッジョのように、このサイトの作者もここに隠れていました。D·N fecit（D・Nがこれを作った）。",abegg:"カラヴァッジョのように、私もこのサイトのどこかに隠れています。見つけられますか？",abtag:"このプロジェクトについて",abh:"こんにちは、ディランです。",abp:["チューリッヒ工科大学（ETH）で電気工学と情報技術を学んでいます。美術は専門ではありませんが、とても面白いと思っています。","きっかけは、両親がウフィツィ美術館を訪れたことでした。どの絵を見るべきか、そしてその絵に何が隠されているのかを知りたがっていました。それを短く分かりやすく説明してくれるガイドが見つからなかったので、自分で作ることにしました。","Hidden in the Frameは、美術が好きだけれど専門家ではないすべての人のためのものです。ドイツ語・英語・日本語で書いていて、美術館を少しずつ増やしていきます。"],abai:"調査・文章・画像はAIの助けを借りて作成し、出典で確認しています。間違いを見つけたら、ぜひ教えてください。",tag:"美術館ガイド",h1:"<span class='ln'>もっと近くで見よう。</span><span class='ln'>見逃してはいけない</span><span class='ln'><em>名画</em>。</span>",lead:"美術は好きだけれど専門家ではない人のために。有名な美術館の必見の作品、その物語、そして絵の前で探すべき見どころを紹介します。",start:"ウフィツィ美術館へ",yt:"YouTube",ytsoon:"YouTube – 近日公開",map:"世界地図",maph:"美術館を選ぶ",world:"世界",europe:"ヨーロッパ",lg1:"ガイドあり",lg2:"準備中",live:"ガイドを読む",soon:"近日公開",back:"← すべての美術館",works:"作品",story:"物語",det:"絵の中の見どころ",mean:"この絵が語ること",intro:"黄色い円が見どころの場所です。絵の中の番号は本文の番号に対応しています。",fig:"パブリックドメイン。マーキング：Hidden in the Frame。",about:"ウフィツィ美術館について",visit:"訪問の準備",pdf:"PDFガイド（無料）",pdfnote:"すべての作品の物語と見どころ付き。印刷にもスマホにも。",dlna:"この表示ではダウンロードできません。",saved:"保存しました。",declined:"ダウンロードを中止しました。",must:"必見の名画",checked:"2026年11月現在。開館時間と料金は変わることがあります。訪問前に",check2:"で確認してください。",foot1:"すべての絵画はパブリックドメインです。文章とマーキング：Hidden in the Frame。",foot2:"作品は貸し出されたり展示替えされることがあります。2026年11月現在の情報です。"}
+};
+const FACTS={uffizi:{
+ de:[["1560","Giorgio Vasari beginnt den Bau für Cosimo I. de' Medici – als Amtsgebäude. „Uffizi“ heisst schlicht „Büros“. Fertig wird er 1581."],["1565","Der Vasari-Korridor entsteht in rund fünf Monaten: ein etwa 750 m langer, erhöhter Gang über den Ponte Vecchio bis zum Palazzo Pitti, gebaut zur Hochzeit von Francesco de' Medici mit Johanna von Österreich."],["1737","Anna Maria Luisa, die letzte Medici, vermacht die Sammlungen im „Familienpakt“ der Stadt – unter der Bedingung, dass sie Florenz nie verlassen."],["1769","Die Galerie öffnet für das Publikum – sie gehört zu den ältesten Museen Europas."],["1993","Am 27. Mai explodiert eine Autobombe der Mafia in der Via dei Georgofili: fünf Tote, fünf Werke zerstört, rund 30 beschädigt."],["2024","Der Vasari-Korridor öffnet am 21. Dezember nach acht Jahren wieder. Im selben Jahr zählen die Uffizien gut 5 Millionen Besuche."]],
+ en:[["1560","Giorgio Vasari starts building it for Cosimo I de' Medici as government offices. “Uffizi” simply means “offices”. It is finished in 1581."],["1565","The Vasari Corridor is built in about five months: a raised walkway of about 750 m over the Ponte Vecchio to Palazzo Pitti, made for the wedding of Francesco de' Medici and Joanna of Austria."],["1737","Anna Maria Luisa, the last Medici, leaves the collections to the city in the “Family Pact” – on condition they never leave Florence."],["1769","The gallery opens to the public – one of the oldest museums in Europe."],["1993","On 27 May a Mafia car bomb explodes in Via dei Georgofili: five people killed, five works destroyed, about 30 damaged."],["2024","The Vasari Corridor reopens on 21 December after eight years. That year the Uffizi counts over 5 million visits."]],
+ ja:[["1560","ジョルジョ・ヴァザーリがコジモ1世・デ・メディチのために、役所として建設を始めます。「ウフィツィ」とは「事務所」という意味。1581年に完成。"],["1565","ヴァザーリの回廊がわずか約5か月で造られます。ポンテ・ヴェッキオの上を通りピッティ宮殿へ続く全長約750mの空中通路で、フランチェスコ・デ・メディチとオーストリアのジョヴァンナの結婚のために建てられました。"],["1737","最後のメディチ家の人アンナ・マリーア・ルイーザが「家族協定」でコレクションを町に遺贈。条件は、決してフィレンツェの外に出さないこと。"],["1769","ギャラリーが一般公開されます。ヨーロッパで最も古い美術館の一つです。"],["1993","5月27日、ジョルゴフィリ通りでマフィアの自動車爆弾が爆発。5人が亡くなり、5点の作品が失われ、約30点が損傷しました。"],["2024","12月21日、ヴァザーリの回廊が8年ぶりに再開。この年の来館者数は500万人を超えました。"]]},
+};
+const VISIT={uffizi:{
+ de:[["Öffnungszeiten","Di–So 8:15–18:30, letzter Einlass 17:30"],["Geschlossen","Montags sowie 1. Jan., 1. Mai, 25. Dez."],["Gratis","Jeden ersten Sonntag im Monat"],["Ticket","ca. € 25, ab 16 Uhr ca. € 16 – vorher reservieren"],["Vasari-Korridor","Eigenes Ticket mit Reservierung, nur in eine Richtung zum Boboli-Garten"]],
+ en:[["Opening hours","Tue–Sun 8:15–18:30, last entry 17:30"],["Closed","Mondays, plus 1 Jan, 1 May, 25 Dec"],["Free","First Sunday of every month"],["Ticket","about € 25, after 4 pm about € 16 – book ahead"],["Vasari Corridor","Separate ticket, booking required, one way to the Boboli Gardens"]],
+ ja:[["開館時間","火〜日 8:15〜18:30（最終入館17:30）"],["休館日","月曜日、1月1日、5月1日、12月25日"],["無料","毎月第1日曜日"],["チケット","約25ユーロ、16時以降は約16ユーロ（事前予約がおすすめ）"],["ヴァザーリの回廊","別チケット・予約制。ボーボリ庭園への一方通行"]]}};
+const PDFS={uffizi:[["DE","pdf/Uffizien_Guide_DE.pdf","Uffizien_Guide_DE.pdf"],["EN","pdf/Uffizi_Guide_EN.pdf","Uffizi_Guide_EN.pdf"],["日本語","pdf/Uffizi_Guide_JA.pdf","Uffizi_Guide_JA.pdf"]]};
+const PINS=[{id:"uffizi",live:true,lon:11.2556,lat:43.7678},
+ {n:["Louvre","Louvre","ルーヴル美術館"],c:["Paris","Paris","パリ"],lon:2.3376,lat:48.8606},
+ {n:["Museo del Prado","Prado Museum","プラド美術館"],c:["Madrid","Madrid","マドリード"],lon:-3.6921,lat:40.4138},
+ {n:["Vatikanische Museen","Vatican Museums","ヴァチカン美術館"],c:["Rom","Rome","ローマ"],lon:12.4534,lat:41.9065},
+ {n:["Rijksmuseum","Rijksmuseum","アムステルダム国立美術館"],c:["Amsterdam","Amsterdam","アムステルダム"],lon:4.8852,lat:52.36},
+ {n:["National Gallery","National Gallery","ナショナル・ギャラリー"],c:["London","London","ロンドン"],lon:-0.1283,lat:51.5089},
+ {n:["Kunsthistorisches Museum","Kunsthistorisches Museum","ウィーン美術史美術館"],c:["Wien","Vienna","ウィーン"],lon:16.3617,lat:48.2039},
+ {n:["The Met","The Met","メトロポリタン美術館"],c:["New York","New York","ニューヨーク"],lon:-73.9632,lat:40.7794}];
+const HANG=[["primavera",1,1,3,3],["bacchus",4,1,2,4],["medusa",6,1,1,2],["venus",1,4,3,3],["tondo",6,3,1,2],["urbino",4,5,2,3],["venus_urbino",1,7,2,2],["judith",3,7,1,2],["verkuendigung",4,8,3,1],["anbetung",6,5,1,3]];
+const LI={de:0,en:1,ja:2};
+let lang="de";
+try{const s=localStorage.getItem("lc-lang");if(s&&UI[s])lang=s;}catch(e){}
+const D=window.LC_DATA;
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const museumById=id=>D.museums.find(m=>m.id===id);
+const pinName=p=>p.live?museumById(p.id).name[lang]:p.n[LI[lang]];
+const pinCity=p=>p.live?museumById(p.id).city[lang]:p.c[LI[lang]];
+function ytBtn(cls){const u=UI[lang];return YT_URL?`<a class="btn ${cls}" href="${YT_URL}" target="_blank" rel="noopener">${u.yt} ↗</a>`:`<span class="btn ${cls}" aria-disabled="true">${u.ytsoon}</span>`;}
+function home(){
+  const u=UI[lang];
+  const hang=HANG.map(([k,c,r,w,h])=>`<a href="#uffizi" data-work="w-${k}" data-k="${k}" class="${k==="tondo"||k==="medusa"?"round":""}${["primavera","venus_urbino","verkuendigung"].includes(k)?" portal":""}" style="grid-column:${c}/span ${w};grid-row:${r}/span ${h};background-image:url(hero/${k}.jpg)" aria-label="${esc(museumById("uffizi").works.find(w=>w.key===k).name[lang])}"></a>`).join("");
+  const cards=PINS.map(p=>p.live?`<a class="m live" href="#${p.id}"><h3>${esc(pinName(p))}</h3><span class="city">${esc(pinCity(p))} · ${museumById(p.id).works.length} ${u.works}</span><span class="st">${u.live} →</span></a>`:`<div class="m soon"><h3>${esc(pinName(p))}</h3><span class="city">${esc(pinCity(p))}</span><span class="st">${u.soon}</span></div>`).join("");
+  return `<section class="salon"><div class="wrap">
+      <div><span class="eyebrow">${u.tag}</span><h1>${u.h1}</h1><p>${u.lead}</p><div class="cta"><a class="btn" href="#uffizi">${u.start} →</a><a class="btn ghost" href="#look">${LOOK[lang].nav}</a>${ytBtn("ghost")}</div></div>
+      <div class="hangwrap" id="hangwrap"><div class="hang">${hang}</div><button class="sig" type="button" id="sig" aria-label="?">D·N <i>fecit</i> MMXXVI</button><div class="dark" aria-hidden="true"></div><p class="lamp" aria-hidden="true">${u.lamp}</p><p class="found" id="found" role="status" hidden>${u.found}</p></div>
+    </div></section>
+    <section class="wrap mapsec"><span class="eyebrow">${u.map}</span><h2>${u.maph}</h2>
+      <div class="mapbox"><svg id="map" viewBox="0 0 960 500" role="img" aria-label="${u.map}"></svg>
+        <div class="mapctl"><button id="z-world" type="button">${u.world}</button><button id="z-eu" type="button">${u.europe}</button></div></div>
+      <div class="legend"><span class="l">${u.lg1}</span><span>${u.lg2}</span></div>
+    </section>
+    <section class="wrap museums">${cards}</section>
+    <section class="wrap about"><div class="about-in"><span class="eyebrow">${u.abtag}</span><h2>${u.abh}</h2>${u.abp.map(t=>`<p>${t}</p>`).join("")}<p><i>${u.abegg}</i></p><p class="small">${u.abai}</p></div></section>`;
+}
+function museum(m){
+  const u=UI[lang], x=UX[lang];
+  const facts=(FACTS[m.id]?.[lang]||[]).map(([y,t])=>`<li><span class="y">${y}</span><span>${esc(t)}</span></li>`).join("");
+  const visit=(VISIT[m.id]?.[lang]||[]).map(([a,b])=>`<div><dt>${esc(a)}</dt><dd>${esc(b)}</dd></div>`).join("");
+  const pdfs=(PDFS[m.id]||[]).map(([l,p,f])=>`<button class="btn ${l.startsWith(lang==="ja"?"日":lang.toUpperCase())?"":"ghost"}" type="button" data-pdf="${p}" data-fn="${f}">PDF · ${l}</button>`).join("");
+  const list=m.works.filter(w=>tour==="all"||w.short);
+  const route=list.map((w,i)=>`<li><a href="#${m.id}" data-jump="w-${w.key}"><span class="rn">${i+1}</span><span class="rt">${esc(w.name[lang])}</span><span class="rr">${x.room} ${w.room} · ${x.floor(w.floor)}</span></a></li>`).join("");
+  const arts=list.map((w,i)=>`<article class="work" id="w-${w.key}">
+    <div class="label"><span class="n">${i+1}</span><h2>${esc(w.name[lang])}</h2><span class="meta">${esc(w.artist[lang])} · ${esc(w.medium[lang])} · ${x.room} ${w.room}</span><span class="badges"><span class="pill ${w.status||"on"}">${x.st[w.status||"on"]}</span>${w.yt?`<a class="pill yt" href="${w.yt}" target="_blank" rel="noopener">${x.short} ↗</a>`:""}</span></div>
+    <div class="cols">
+      <div style="display:grid;gap:10px;min-width:0">
+        <figure><div class="pic" style="aspect-ratio:${w.zw}/${w.zh}"><img src="${w.zimg}" width="${w.zw}" height="${w.zh}" alt="${esc(w.name[lang])}" loading="${i<1?'eager':'lazy'}">${w.key==="verkuendigung"&&!dusted?`<canvas class="dust" id="dust" aria-label="${x.dusty}"></canvas><span class="dusthint">${x.dusty}</span>`:""}${w.pts.map((p,j)=>{const d=2*p[2]*Math.min(w.zw,w.zh)/w.zw*100;return `<button class="hot" type="button" data-zoom="${w.key}" data-i="${j}" style="left:${p[0]*100}%;top:${p[1]*100}%;width:${d}%" aria-label="${x.show} ${j+1}"><span>${j+1}</span></button>`}).join("")}</div>
+        <figcaption>${x.tap} · ${u.fig}</figcaption></figure>
+        <button class="btn gamebtn" type="button" data-game="${w.key}">${x.game}</button>
+        ${AUDIO_READY?`<div class="ap" data-ap><button class="apb" type="button" aria-label="${x.play}"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="i-play" d="M8 5.5v13l11-6.5z"/><g class="i-pause"><rect x="7" y="5.5" width="3.6" height="13" rx="1"/><rect x="13.4" y="5.5" width="3.6" height="13" rx="1"/></g></svg></button><div class="apm"><span class="apt"><b>${x.listen}</b> · English</span><input class="apr" type="range" min="0" max="1000" value="0" aria-label="${x.listen}"><span class="aptime"><span class="cur">0:00</span> / ${fmt(DUR[w.key]||0)}</span><span class="apsub">${x.lookfirst}<button class="apskip" type="button" data-k="${w.key}">${x.skip} →</button></span></div><audio preload="none" src="${w.audio.en}"></audio></div>`:""}
+      </div>
+      <div style="display:grid;gap:18px;min-width:0">
+        <div class="story"><span class="eyebrow">${u.story}</span><p>${w.story[lang]}</p></div>
+        <div><span class="eyebrow">${u.det}</span><ol class="det">${w.details[lang].map((d,j)=>`<li><span>${d} <button class="look" type="button" data-zoom="${w.key}" data-i="${j}">${x.show} →</button></span></li>`).join("")}</ol></div>
+      </div>
+    </div>
+    <p class="meaning"><b>${u.mean}</b>${w.meaning[lang]}</p>
+  </article>`).join("");
+  return `<div class="wrap"><section class="mhead"><a class="back" href="#home">${u.back}</a><span class="eyebrow">${esc(m.city[lang])}</span><h1>${esc(m.name[lang])}</h1></section>
+   <section class="panel">
+     <div class="box"><h2>${u.about}</h2><ul class="facts">${facts}</ul></div>
+     <div style="display:grid;gap:20px;min-width:0;align-content:start">
+       <div class="box"><h2>${u.pdf}</h2><p class="small">${u.pdfnote}</p><div class="dl" id="dl">${pdfs}</div><p class="status" id="dlstatus" aria-live="polite"></p></div>
+       <div class="box"><h2>${u.visit}</h2><dl class="visit">${visit}</dl><p class="small">${u.checked} <a href="https://www.uffizi.it/en" target="_blank" rel="noopener">uffizi.it</a> ${u.check2}</p><p class="small">${x.offline}</p></div>
+       <div class="box" style="grid-template-columns:minmax(0,1fr) auto;align-items:center"><span class="small" style="font-size:.9rem">Shorts · ${esc(m.name[lang])}</span>${ytBtn("")}</div>
+     </div>
+   </section>
+   <section class="tour box" style="margin-top:28px"><span class="eyebrow">${x.tour}</span><h2>${x.tourh}</h2>
+     <div class="seg" role="group" aria-label="${x.tour}"><button type="button" id="t-short" data-tour="short" aria-pressed="${tour==="short"}">${x.t1}</button><button type="button" id="t-all" data-tour="all" aria-pressed="${tour==="all"}">${x.t2}</button></div>
+     <ol class="route">${route}</ol><p class="small">${x.roomnote}</p></section>
+   <section class="mhead" style="padding-top:28px"><span class="eyebrow">${u.must}</span><p>${u.intro} <a href="#look" style="color:var(--gold-ink)">${LOOK[lang].nav} →</a></p></section>
+   ${arts}</div>`;
+}
+const GUIDED={"de": ["Geführtes Anschauen", "Leg die Kopfhörer an, stell dich vor ein Bild und lass dich in 5 Minuten durch alle Schritte führen – mit Pausen zum Schauen. Auf Englisch."], "en": ["Guided looking", "Put on your headphones, stand in front of a painting and let a calm voice guide you through every step in 5 minutes – with pauses to look."], "ja": ["ガイド付き鑑賞", "イヤホンをつけて絵の前に立ち、5分間、穏やかな声に導かれながらすべてのステップを体験しましょう。見るための間もあります。英語です。"]};
+const FIGS=[{"id": "bacchus", "from": "bacchus", "w": 200, "say": {"de": "Prost! … Äh, pssst. Ich war nie hier.", "en": "Cheers! … Er, shh. I was never here.", "ja": "乾杯！…あ、しーっ。僕はここにいなかったことに。"}}, {"id": "venus", "from": "venus", "w": 130, "say": {"de": "Endlich mal raus aus der Muschel.", "en": "Finally out of that shell.", "ja": "やっと貝殻から出られたわ。"}}, {"id": "medusa", "from": "medusa", "w": 150, "say": {"de": "Nicht anschauen! … Zu spät.", "en": "Don't look at me! … Too late.", "ja": "見ないで！…もう遅いわ。"}}, {"id": "dog", "from": "venus_urbino", "w": 130, "say": {"de": "Wuff. (Ich bewache hier eigentlich nichts.)", "en": "Woof. (I'm not actually guarding anything.)", "ja": "ワン。（実は何も見張ってないよ。）"}}, {"id": "flora", "from": "primavera", "w": 110, "say": {"de": "Hast du Zephyr gesehen? Sag ihm nicht, wo ich bin.", "en": "Have you seen Zephyr? Don't tell him where I am.", "ja": "ゼフュロスを見なかった？私の居場所は内緒よ。"}}, {"id": "federico", "from": "urbino", "w": 140, "say": {"de": "Bitte nur von links fotografieren.", "en": "Please only photograph me from the left.", "ja": "写真は左側からだけでお願いします。"}}];
+const LOOK={"de": {"nav": "Richtig hinschauen", "tag": "Anleitung", "h": "Wie man ein Gemälde wirklich ansieht", "lead": "In einer Studie im Metropolitan Museum in New York blieben Besucher im Schnitt nur rund 27 Sekunden vor einem Meisterwerk stehen, die Hälfte sogar weniger als 17 Sekunden. In dieser Zeit sieht man das Bild, aber man schaut es nicht an. Diese Anleitung hilft dir, aus 17 Sekunden fünf gute Minuten zu machen.", "steps": [["Erst schauen, dann lesen", "Ignoriere zuerst das Schild neben dem Bild. Sonst suchst du nur noch das, was dort steht. Gib dir eine Minute, in der du nur schaust."], ["Beschreiben, was wirklich da ist", "Zähle im Kopf auf, was du siehst: Personen, Gegenstände, Farben, Licht. Noch keine Deutung, nur Fakten. „Ein junger Mann, ein Glas Wein, eine Schale Obst.“"], ["Mit den Augen wandern", "Geh nah heran und wieder zurück. Schau in die Ecken, in den Hintergrund, auf Hände und Gesichter. Wohin schauen die Figuren? Wohin fällt das Licht? Was ist hell, was liegt im Schatten?"], ["Fragen: Was passiert hier – und woran sehe ich das?", "Jetzt darfst du deuten. Aber begründe es mit etwas, das du siehst. „Er ist betrunken – das sehe ich an den roten Wangen und dem schiefen Wein im Glas.“"], ["Auf das achten, was nicht passt", "Ein zu langer Hals, eine Figur, die als Einzige zu dir schaut, faules Obst in einer Prachtschale: Das Seltsame ist fast immer Absicht – und oft der Schlüssel zum ganzen Bild."], ["Was wundert mich?", "Formuliere eine offene Frage. Warum ist sie so blass? Warum schaut er uns an? Mit einer Frage im Kopf schaust du automatisch genauer."], ["Jetzt erst lesen", "Lies das Schild oder den Guide und vergleiche mit deinen Vermutungen. Was hattest du richtig? Was hast du übersehen? Genau dieser Vergleich bleibt im Gedächtnis."], ["Ein Detail mitnehmen", "Merk dir ein einziges Detail, das du später erzählen kannst. Mehr braucht es nicht."]], "tipsh": "Tipps für den Museumsbesuch", "tips": ["Weniger ist mehr: Lieber 5 Bilder richtig als 50 im Vorbeigehen. Der 1-Stunden-Rundgang ist genau dafür da.", "Setz dich: Viele Säle haben Bänke. Im Sitzen schaut man länger.", "Fotos erst danach: Wer zuerst fotografiert, schaut weniger hin.", "Zu zweit oder als Familie: Jeder nennt ein Detail, das die anderen noch nicht gesehen haben.", "Mit Kindern: Spielt „Ich sehe was, was du nicht siehst“ – oder unser Spiel „Finde das Detail“."], "methh": "Woher die Methode kommt", "meth": "Die Schritte orientieren sich an zwei bewährten Ansätzen aus der Kunstvermittlung: der Routine „See, Think, Wonder“ (Sehen, Denken, Fragen) von Project Zero an der Harvard University und den „Visual Thinking Strategies“, die in vielen Museen und Schulen eingesetzt werden. Beide haben denselben Kern: erst genau beobachten, dann mit Belegen deuten, dann neugierig weiterfragen.", "try": "Probier es aus", "tryp": "Nimm dir den Bacchus von Caravaggio: Schau zuerst eine Minute, ohne etwas zu lesen. Dann spiel „Finde das Detail“.", "trybtn": "Zum Bacchus"}, "en": {"nav": "How to look", "tag": "Guide", "h": "How to really look at a painting", "lead": "In a study at the Metropolitan Museum in New York, visitors stood in front of a masterpiece for about 27 seconds on average – half of them for less than 17 seconds. In that time you see a painting, but you don't look at it. This guide helps you turn 17 seconds into five good minutes.", "steps": [["Look first, read later", "Ignore the label next to the painting at first. Otherwise you only look for what it tells you. Give yourself one minute of just looking."], ["Describe what is really there", "List in your head what you see: people, objects, colours, light. No interpretation yet, only facts. “A young man, a glass of wine, a bowl of fruit.”"], ["Let your eyes wander", "Step close, then step back. Look into the corners, the background, at hands and faces. Where are the figures looking? Where does the light fall? What is bright, what is in shadow?"], ["Ask: what is happening – and what makes me say that?", "Now you may interpret. But back it up with something you can see. “He is drunk – I can tell from his red cheeks and the tilted wine in his glass.”"], ["Notice what doesn't fit", "A neck that is too long, one figure who is the only one looking at you, rotten fruit in a splendid bowl: the strange thing is almost always intentional – and often the key to the whole painting."], ["What do I wonder?", "Ask yourself one open question. Why is she so pale? Why is he looking at us? With a question in mind you automatically look more closely."], ["Only now, read", "Read the label or the guide and compare it with your guesses. What did you get right? What did you miss? That comparison is what stays in your memory."], ["Take one detail home", "Remember a single detail you can tell someone later. That is all you need."]], "tipsh": "Tips for your museum visit", "tips": ["Less is more: better 5 paintings properly than 50 in passing. That is what the 1-hour tour is for.", "Sit down: many rooms have benches. Seated, you look longer.", "Photos afterwards: if you photograph first, you look less.", "In pairs or as a family: everyone names one detail the others haven't spotted yet.", "With children: play “I spy” – or our game “Find the detail”."], "methh": "Where the method comes from", "meth": "The steps are based on two proven approaches from art education: the “See, Think, Wonder” routine from Project Zero at Harvard University, and “Visual Thinking Strategies”, used in many museums and schools. Both share the same core: observe closely first, then interpret with evidence, then keep asking out of curiosity.", "try": "Try it", "tryp": "Take Caravaggio's Bacchus: look for one minute first, without reading anything. Then play “Find the detail”.", "trybtn": "Go to Bacchus"}, "ja": {"nav": "絵の見方", "tag": "ガイド", "h": "絵を本当に「見る」ための方法", "lead": "ニューヨークのメトロポリタン美術館での調査によると、来館者が名画の前に立つ時間は平均で約27秒、半数の人は17秒未満でした。その時間では、絵が目に入っても、本当に見たことにはなりません。このガイドで、17秒を充実した5分に変えてみましょう。", "steps": [["まず見る、読むのはあと", "最初は絵の横の解説パネルを読まないでください。読むと、そこに書かれていることだけを探してしまいます。1分間、ただ見ることに集中しましょう。"], ["実際にあるものを言葉にする", "見えるものを頭の中で挙げていきます。人物、物、色、光。まだ解釈はせず、事実だけ。「若い男性、ワインのグラス、果物の鉢」。"], ["目をさまよわせる", "近づいたり、離れたりしてみましょう。隅や背景、手や顔を見ます。人物はどこを見ている？光はどこに当たっている？明るいところと影はどこ？"], ["問いかける：何が起きている？なぜそう思う？", "ここで初めて解釈します。ただし、見えるものを根拠にしましょう。「彼は酔っている。赤い頬とグラスの中で傾いたワインからそう分かる」。"], ["「おかしな点」に気づく", "長すぎる首、一人だけこちらを見る人物、豪華な鉢の中の腐った果物。不自然なところはほとんどの場合わざとで、絵全体を解く鍵であることが多いのです。"], ["何が不思議？", "答えのない問いを一つ持ちましょう。なぜ彼女はあんなに青白い？なぜ彼はこちらを見ている？問いを持つと、自然とよく見るようになります。"], ["ここで初めて読む", "解説パネルやガイドを読み、自分の推測と比べます。何が当たっていた？何を見落とした？この比較こそが記憶に残ります。"], ["見どころを一つ持ち帰る", "あとで誰かに話せる見どころを一つだけ覚えておきましょう。それで十分です。"]], "tipsh": "美術館を訪れるときのヒント", "tips": ["少ないほど良い：50点を素通りするより、5点をしっかり。1時間ルートはそのためにあります。", "座る：多くの展示室にはベンチがあります。座ると長く見られます。", "写真はあとで：先に撮ると、あまり見なくなります。", "二人で、家族で：一人ずつ、他の人がまだ気づいていない見どころを挙げましょう。", "子どもと一緒に：「見つけたもの当てゲーム」や、私たちのゲーム「見どころを探せ」で遊んでみてください。"], "methh": "この方法の由来", "meth": "これらのステップは、美術教育で実績のある二つの方法に基づいています。ハーバード大学プロジェクト・ゼロの「See, Think, Wonder（見る・考える・問う）」と、多くの美術館や学校で使われている「ヴィジュアル・シンキング・ストラテジーズ（VTS）」です。どちらも核は同じ。まずよく観察し、根拠をもって解釈し、好奇心をもって問い続けることです。", "try": "やってみよう", "tryp": "カラヴァッジョの《バッカス》で試してみましょう。まず何も読まずに1分間見て、それから「見どころを探せ」で遊んでみてください。", "trybtn": "バッカスへ"}};
+const UX={
+ de:{dusty:"Hier ist es ein bisschen staubig … wisch mal drüber.",lookfirst:"Beginnt mit einer kurzen Schau-Aufgabe zu diesem Bild.",skip:"Intro überspringen",listen:"Audioguide",play:"Abspielen",pause:"Pause",st:{on:"Ausgestellt · geprüft Nov. 2026",loan:"Zurzeit verliehen",resto:"In Restaurierung"},short:"Short ansehen",game:"Spiel: Finde das Detail",find:"Finde:",hit:"Gefunden!",miss:"Daneben – versuch es nochmal.",hint:"Tipp: Der Kreis zeigt, wo es ist.",score:"Punkte",gnext:"Nächstes",done:"Geschafft! Alle Details gefunden.",again:"Nochmal",room:"Saal",floor:f=>f+". Stock",tour:"Rundgang",tourh:"Wie viel Zeit hast du?",t1:"1 Stunde · 6 Werke",t2:"2 Stunden · alle 10",roomnote:"Reihenfolge so, wie man durchs Museum läuft: oben im 2. Stock beginnen, dann in den 1. Stock. Säle können sich ändern.",show:"Im Bild zeigen",tap:"Tippe auf einen Kreis zum Reinzoomen",audionote:"Audioguide auf Englisch, ca. 2–3 Minuten.",offline:"Offline-Modus für schlechtes Museums-WLAN kommt mit der öffentlichen Version.",close:"Schliessen",prev:"Zurück",next:"Weiter",of:"von"},
+ en:{dusty:"It’s a little dusty here … wipe it off.",lookfirst:"Starts with a short looking task for this painting.",skip:"Skip intro",listen:"Audio guide",play:"Play",pause:"Pause",st:{on:"On view · checked Nov 2026",loan:"Currently on loan",resto:"Under restoration"},short:"Watch the Short",game:"Game: Find the detail",find:"Find:",hit:"Found it!",miss:"Not quite – try again.",hint:"Hint: the circle shows where it is.",score:"Points",gnext:"Next",done:"Done! You found every detail.",again:"Play again",room:"Room",floor:f=>(f==="1"?"1st":"2nd")+" floor",tour:"Tour",tourh:"How much time do you have?",t1:"1 hour · 6 works",t2:"2 hours · all 10",roomnote:"In the order you walk through the museum: start on the 2nd floor, then go down to the 1st. Rooms can change.",show:"Show in picture",tap:"Tap a circle to zoom in",audionote:"Audio guide in English, about 2–3 minutes.",offline:"Offline mode for weak museum Wi-Fi comes with the public version.",close:"Close",prev:"Previous",next:"Next",of:"of"},
+ ja:{dusty:"ここは少しほこりっぽい…なでてみて。",lookfirst:"最初に、この絵を見るための短い課題があります。",skip:"イントロをスキップ",listen:"音声ガイド",play:"再生",pause:"一時停止",st:{on:"展示中・2026年11月確認",loan:"現在貸出中",resto:"修復中"},short:"ショート動画を見る",game:"ゲーム：見どころを探せ",find:"探そう：",hit:"見つけた！",miss:"惜しい！もう一度。",hint:"ヒント：円が場所を示しています。",score:"ポイント",gnext:"次へ",done:"クリア！すべての見どころを見つけました。",again:"もう一度",room:"展示室",floor:f=>f==="2"?"3階（伊式2階）":"2階（伊式1階）",tour:"見学ルート",tourh:"時間はどれくらいありますか？",t1:"1時間・6作品",t2:"2時間・全10作品",roomnote:"美術館を歩く順番です。上の階（伊式2階）から始め、次に下の階へ。展示室は変わることがあります。",show:"絵で見る",tap:"円をタップすると拡大します",audionote:"音声ガイドは英語です（約2〜3分）。",offline:"美術館のWi-Fiが弱くても使えるオフラインモードは、公開版で対応予定です。",close:"閉じる",prev:"前へ",next:"次へ",of:"/"}
+};
+let tour="all";
+try{const t=localStorage.getItem("lc-tour");if(t==="short"||t==="all")tour=t;}catch(e){}
+
+function lookPage(){
+  const L=LOOK[lang], u=UI[lang];
+  return `<div class="wrap look"><section class="mhead"><a class="back" href="#home">${u.back}</a><span class="eyebrow">${L.tag}</span><h1>${L.h}</h1><p class="leadp">${L.lead}</p>
+   <div class="guided"><div><span class="eyebrow">${GUIDED[lang][0]} · 5 min</span><p class="small" style="font-size:.9rem;margin-top:4px">${GUIDED[lang][1]}</p></div>
+   <div class="ap" data-ap><button class="apb" type="button" aria-label="${UX[lang].play}"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="i-play" d="M8 5.5v13l11-6.5z"/><g class="i-pause"><rect x="7" y="5.5" width="3.6" height="13" rx="1"/><rect x="13.4" y="5.5" width="3.6" height="13" rx="1"/></g></svg></button><div class="apm"><span class="apt"><b>${GUIDED[lang][0]}</b> · English</span><input class="apr" type="range" min="0" max="1000" value="0" aria-label="${GUIDED[lang][0]}"><span class="aptime"><span class="cur">0:00</span> / ${fmt(DUR.guided)}</span></div><audio preload="none" src="audio/guided_en.mp3"></audio></div></div></section>
+   <ol class="steps">${L.steps.map(([t,d],i)=>`<li><span class="sn">${i+1}</span><div><h3>${t}</h3><p>${d}</p></div></li>`).join("")}</ol>
+   <section class="panel"><div class="box"><h2>${L.tipsh}</h2><ul class="tips">${L.tips.map(t=>`<li>${t}</li>`).join("")}</ul></div>
+     <div class="box"><h2>${L.try}</h2><p>${L.tryp}</p><a class="btn" style="justify-self:start" href="#uffizi" data-work="w-bacchus">${L.trybtn} →</a><h2 style="margin-top:8px">${L.methh}</h2><p class="small" style="font-size:.88rem">${L.meth}</p></div></section></div>`;
+}
+let world=null, dl=null;
+async function drawMap(){
+  const svg=d3.select("#map"); if(svg.empty()||typeof d3==="undefined")return;
+  try{ if(!world){world=await (await fetch("world.json")).json();} }catch(e){return;}
+  const proj=d3.geoNaturalEarth1().fitExtent([[10,10],[950,490]],{type:"Sphere"}); const path=d3.geoPath(proj);
+  const g=svg.append("g");
+  g.append("g").selectAll("path").data(topojson.feature(world,world.objects.countries).features).join("path").attr("class","land").attr("d",path);
+  const pg=g.append("g");
+  const pins=pg.selectAll("g").data(PINS).join("g").attr("class",d=>"pin "+(d.live?"live":"soon")).attr("transform",d=>`translate(${proj([d.lon,d.lat])})`);
+  pins.filter(d=>d.live).append("circle").attr("class","halo").attr("r",5);
+  pins.append("circle").attr("class","dot").attr("r",d=>d.live?5:3.2);
+  pins.append("text").attr("x",7).attr("y",4).text(d=>pinName(d));
+  pins.filter(d=>d.live).attr("tabindex",0).attr("role","link").on("click",(e,d)=>{location.hash=d.id}).on("keydown",(e,d)=>{if(e.key==="Enter")location.hash=d.id});
+  const zoom=d3.zoom().scaleExtent([1,12]).translateExtent([[0,0],[960,500]]).on("zoom",e=>{g.attr("transform",e.transform);const k=e.transform.k;pins.attr("transform",d=>`translate(${proj([d.lon,d.lat])}) scale(${1/k})`);});
+  svg.call(zoom).on("wheel.zoom",null);
+  const toEurope=()=>{const [x,y]=proj([9,47]);const k=5.2;svg.transition().duration(matchMedia("(prefers-reduced-motion: reduce)").matches?0:700).call(zoom.transform,d3.zoomIdentity.translate(480-x*k,250-y*k).scale(k));};
+  document.getElementById("z-eu").onclick=toEurope;
+  document.getElementById("z-world").onclick=()=>svg.transition().duration(500).call(zoom.transform,d3.zoomIdentity);
+  toEurope();
+}
+async function wireDownloads(){
+  const box=document.getElementById("dl"); if(!box)return;
+  box.querySelectorAll("button[data-pdf]").forEach(b=>{const l=document.createElement("a");l.className=b.className;l.href=b.dataset.pdf;l.setAttribute("download",b.dataset.fn);l.textContent=b.textContent;b.replaceWith(l);});
+}
+function render(){
+  document.documentElement.lang=lang; document.body.classList.toggle("ja",lang==="ja");
+  document.querySelectorAll(".langs button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.l===lang));
+  const id=(location.hash||"#home").slice(1); const m=museumById(id);
+  document.getElementById("app").innerHTML=id==="look"?lookPage():m?museum(m):home();
+  const u=UI[lang]; document.getElementById("foot").innerHTML=`<p>${u.foot1}</p><p>${u.foot2}</p><div class="swbox"><button class="sw" type="button" id="sw" aria-pressed="${night}" aria-label="${night?u.nightoff:u.night}"><span class="plate"><span class="screw t"></span><span class="lever"></span><span class="screw b"></span></span></button><span class="swl">${u.swl}</span><span class="hours">${u.hours}</span></div>`;
+  applyNight(); if(m){ wireDownloads(); setTimeout(dust,100); setTimeout(wingSketch,120);} else if(id!=="look"){ drawMap(); lamp(); }
+}
+document.querySelector(".langs").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;lang=b.dataset.l;try{localStorage.setItem("lc-lang",lang)}catch(_){}const y=scrollY;render();scrollTo(0,y);});
+document.getElementById("app").addEventListener("click",e=>{
+  const a=e.target.closest("[data-jump]"); if(a){e.preventDefault();document.getElementById(a.dataset.jump)?.scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"});return;}
+  const h=e.target.closest("[data-work]"); if(h){e.preventDefault();const t=h.dataset.work; if(location.hash!=="#uffizi"){location.hash="uffizi";} setTimeout(()=>document.getElementById(t)?.scrollIntoView(),60);}
+});
+
+const ZV={w:null,i:-1};
+function zLayout(){
+  const w=ZV.w; if(!w)return; const st=document.getElementById("zs"); const W=st.clientWidth,H=st.clientHeight;
+  const base=Math.min(W/w.zw,H/w.zh); const iw=w.zw*base, ih=w.zh*base; const ox=(W-iw)/2, oy=(H-ih)/2;
+  const zi=document.getElementById("zi"); zi.style.width=iw+"px"; zi.style.height=ih+"px";
+  let k=1,cx=W/2,cy=H/2,tx=ox,ty=oy; const ring=document.getElementById("zring");
+  if(ZV.i>=0){const p=w.pts[ZV.i]; const r=p[2]*Math.min(iw,ih); k=Math.max(1,Math.min(6,0.3*Math.min(W,H)/r))*zExtra; const px=p[0]*iw, py=p[1]*ih; tx=cx-px*k; ty=cy-py*k; const cl=(v,len,S)=>len*k<=S?(S-len*k)/2:Math.min(0,Math.max(S-len*k,v)); tx=cl(tx,iw,W); ty=cl(ty,ih,H);
+    const R=r*k; ring.style.cssText=`left:${tx+px*k-R}px;top:${ty+py*k-R}px;width:${2*R}px;height:${2*R}px;opacity:1`;}
+  else ring.style.opacity=0;
+  zi.style.transform=`translate(${tx}px,${ty}px) scale(${k})`;
+}
+function zShow(){ zExtra=1;
+  const w=ZV.w, x=UX[lang]; const n=w.pts.length;
+  document.getElementById("zvt").textContent=w.name[lang]+(ZV.i>=0?` · ${ZV.i+1} ${x.of} ${n}`:"");
+  document.getElementById("ztext").innerHTML=ZV.i>=0?w.details[lang][ZV.i]:w.story[lang];
+  document.getElementById("zall").textContent=ZV.i>=0?(lang==="ja"?"全体":lang==="en"?"Whole picture":"Ganzes Bild"):(x.next);
+  zLayout();
+}
+function zOpen(key,i){
+  const m=museumById("uffizi"); ZV.w=m.works.find(w=>w.key===key); ZV.i=i; ZV.last=document.activeElement;
+  const img=document.getElementById("zimg"); img.src=ZV.w.zimg; img.alt=ZV.w.name[lang];
+  document.getElementById("zv").hidden=false; document.body.style.overflow="hidden";
+  ZV.i=-1; zShow(); requestAnimationFrame(()=>setTimeout(()=>{ZV.i=i;zShow();},60));
+  document.getElementById("zclose").setAttribute("aria-label",UX[lang].close); document.getElementById("zclose").focus();
+}
+function zClose(){document.getElementById("zv").hidden=true;document.body.style.overflow="";ZV.w=null;ZV.last?.focus?.();}
+function zStep(d){const n=ZV.w.pts.length; ZV.i=(ZV.i<0?(d>0?0:n-1):(ZV.i+d+n)%n); zShow();}
+document.getElementById("zclose").onclick=zClose;
+document.getElementById("zprev").onclick=()=>zStep(-1);
+document.getElementById("znext").onclick=()=>zStep(1);
+document.getElementById("zall").onclick=()=>{if(ZV.i>=0){ZV.i=-1;zShow();}else zStep(1);};
+addEventListener("keydown",e=>{if(!ZV.w)return; if(e.key==="Escape")zClose(); if(e.key==="ArrowRight")zStep(1); if(e.key==="ArrowLeft")zStep(-1);});
+addEventListener("resize",()=>{if(ZV.w)zLayout();});
+(()=>{let sx=null; const zs=document.getElementById("zs"); zs.addEventListener("pointerdown",e=>{sx=e.clientX}); zs.addEventListener("pointerup",e=>{if(sx===null)return; const dx=e.clientX-sx; sx=null; if(Math.abs(dx)>50)zStep(dx<0?1:-1);});})();
+document.getElementById("app").addEventListener("click",e=>{
+  const z=e.target.closest("[data-zoom]"); if(z){e.preventDefault();zOpen(z.dataset.zoom,+z.dataset.i);return;}
+  const t=e.target.closest("[data-tour]"); if(t){tour=t.dataset.tour;try{localStorage.setItem("lc-tour",tour)}catch(_){}; const y=scrollY; render(); scrollTo(0,y);}
+});
+
+const GV={w:null,i:0,miss:0,score:0,solved:false};
+const term=h=>{const m=/<b>(.*?)<\/b>/.exec(h);return m?m[1].replace(/<[^>]+>/g,""):"";};
+function gRender(){
+  const w=GV.w,x=UX[lang]; const wrap=document.getElementById("gw"); wrap.querySelectorAll(".gring,.gtap").forEach(e=>e.remove());
+  document.getElementById("gvt").textContent=`${w.name[lang]} · ${x.score}: ${GV.score}/${w.pts.length}`;
+  const nb=document.getElementById("gnext");
+  if(GV.i>=w.pts.length){document.getElementById("gq").innerHTML=`<b>${x.done}</b>`;document.getElementById("gfb").textContent="";nb.textContent=x.again;nb.hidden=false;return;}
+  document.getElementById("gq").innerHTML=`${x.find} <b>${esc(term(w.details[lang][GV.i]))}</b> <span style="opacity:.6">(${GV.i+1}/${w.pts.length})</span>`;
+  document.getElementById("gfb").textContent=""; nb.textContent=x.gnext; nb.hidden=true; GV.miss=0; GV.solved=false;
+}
+function gRing(){const w=GV.w,p=w.pts[GV.i],img=document.getElementById("gimg");const W=img.clientWidth,H=img.clientHeight;const r=p[2]*Math.min(W,H);
+  const d=document.createElement("div");d.className="gring";d.style.cssText=`left:${p[0]*W}px;top:${p[1]*H}px;width:${2*r}px;height:${2*r}px`;document.getElementById("gw").appendChild(d);}
+document.getElementById("gimg").addEventListener("click",e=>{
+  const w=GV.w; if(!w||GV.solved||GV.i>=w.pts.length)return; const x=UX[lang]; const img=e.currentTarget; const b=img.getBoundingClientRect();
+  const fx=(e.clientX-b.left)/b.width, fy=(e.clientY-b.top)/b.height; const p=w.pts[GV.i];
+  const t=document.createElement("div");t.className="gtap";t.style.cssText=`left:${fx*b.width}px;top:${fy*b.height}px`;document.getElementById("gw").appendChild(t);
+  const m=Math.min(b.width,b.height); const dist=Math.hypot((fx-p[0])*b.width,(fy-p[1])*b.height);
+  if(dist<=p[2]*m*1.35){GV.solved=true; if(GV.miss<2)GV.score++; gRing(); document.getElementById("gfb").innerHTML=`<b style="color:#E8C770">${x.hit}</b> ${w.details[lang][GV.i]}`; document.getElementById("gnext").hidden=false; document.getElementById("gvt").textContent=`${w.name[lang]} · ${x.score}: ${GV.score}/${w.pts.length}`;}
+  else{GV.miss++; if(GV.miss>=2){GV.solved=true;gRing();document.getElementById("gfb").innerHTML=`${x.hint} ${w.details[lang][GV.i]}`;document.getElementById("gnext").hidden=false;} else document.getElementById("gfb").textContent=x.miss;}
+});
+document.getElementById("gnext").onclick=()=>{if(GV.i>=GV.w.pts.length){GV.i=0;GV.score=0;}else GV.i++; gRender();};
+function gOpen(key){const m=museumById("uffizi");GV.w=m.works.find(w=>w.key===key);GV.i=0;GV.score=0;GV.last=document.activeElement;
+  const img=document.getElementById("gimg");img.src=GV.w.zimg;img.alt=GV.w.name[lang];document.getElementById("gv").hidden=false;document.body.style.overflow="hidden";gRender();document.getElementById("gclose").focus();}
+function gClose(){document.getElementById("gv").hidden=true;document.body.style.overflow="";GV.w=null;GV.last?.focus?.();}
+document.getElementById("gclose").onclick=gClose;
+addEventListener("keydown",e=>{if(GV.w&&e.key==="Escape")gClose();});
+addEventListener("resize",()=>{if(GV.w&&GV.solved){document.querySelectorAll(".gring").forEach(e=>e.remove());gRing();}});
+document.getElementById("app").addEventListener("click",e=>{const g=e.target.closest("[data-game]");if(g){e.preventDefault();gOpen(g.dataset.game);}});
+
+document.getElementById("app").addEventListener("click",e=>{
+  const b=e.target.closest(".apb"); if(!b)return; const ap=b.closest("[data-ap]"); const a=ap.querySelector("audio");
+  document.querySelectorAll("[data-ap] audio").forEach(o=>{if(o!==a&&!o.paused)o.pause();});
+  if(a.paused){a.play().catch(()=>{});}else a.pause();
+});
+document.getElementById("app").addEventListener("input",e=>{const r=e.target.closest(".apr");if(!r)return;const a=r.closest("[data-ap]").querySelector("audio");const d=a.duration||DUR[0]||0;if(a.duration){a.currentTime=r.value/1000*a.duration;}r.style.setProperty("--p",r.value/10+"%");});
+["play","pause","timeupdate","ended","loadedmetadata"].forEach(ev=>document.getElementById("app").addEventListener(ev,e=>{
+  const a=e.target; if(!(a instanceof HTMLAudioElement))return; const ap=a.closest("[data-ap]"); const x=UX[lang];
+  ap.classList.toggle("playing",!a.paused&&!a.ended); ap.querySelector(".apb").setAttribute("aria-label",a.paused?x.play:x.pause);
+  if(a.duration){const v=a.currentTime/a.duration*1000; const r=ap.querySelector(".apr"); r.value=v; r.style.setProperty("--p",v/10+"%"); ap.querySelector(".cur").textContent=fmt(a.currentTime);}
+},true));
+
+document.getElementById("app").addEventListener("click",e=>{const b=e.target.closest(".apskip");if(!b)return;const a=b.closest("[data-ap]").querySelector("audio");
+  document.querySelectorAll("[data-ap] audio").forEach(o=>{if(o!==a&&!o.paused)o.pause();});
+  const go=()=>{a.currentTime=INTRO[b.dataset.k]||0;a.play().catch(()=>{});}; if(a.readyState>=1)go(); else{a.addEventListener("loadedmetadata",go,{once:true});a.load();}});
+
+function lamp(){
+  const w=document.getElementById("hangwrap"); if(!w)return; let auto=true,t0=performance.now(),raf;
+  const rs=()=>{w.style.setProperty("--r",Math.max(110,Math.min(190,w.clientWidth*.28))+"px");}; rs();
+  const set=(x,y)=>{w.style.setProperty("--x",x+"px");w.style.setProperty("--y",y+"px");};
+  if(matchMedia("(prefers-reduced-motion: reduce)").matches)return;
+  const tick=t=>{if(!document.body.contains(w))return; if(auto){const k=(t-t0)/1000;const W=w.clientWidth,H=w.clientHeight;set(W*(.5+.38*Math.sin(k*.45)),H*(.45+.33*Math.sin(k*.71+1)));} raf=requestAnimationFrame(tick);}; raf=requestAnimationFrame(tick);
+  const mv=e=>{auto=false;const b=w.getBoundingClientRect();set(e.clientX-b.left,e.clientY-b.top);};
+  const sal=w.closest(".salon"); sal.addEventListener("pointermove",mv); sal.addEventListener("pointerdown",mv);
+  sal.addEventListener("pointerleave",()=>{auto=true;t0=performance.now();});
+  addEventListener("resize",rs);
+}
+document.getElementById("app").addEventListener("click",e=>{const s=e.target.closest("#sig");if(!s)return;const f=document.getElementById("found");f.hidden=!f.hidden;});
+
+function toast(t){document.querySelectorAll(".toast").forEach(e=>e.remove());const d=document.createElement("div");d.className="toast";d.setAttribute("role","status");d.textContent=t;document.body.appendChild(d);setTimeout(()=>d.remove(),3200);}
+let night=false;
+try{night=sessionStorage.getItem("hf-night")==="1";}catch(e){}
+function applyNight(){
+  document.body.classList.toggle("night",night); let v=document.querySelector(".nightveil");
+  if(night&&!v){v=document.createElement("div");v.className="nightveil";document.body.appendChild(v);}
+  if(!night&&v)v.remove();
+  setTimeout(placeFigs,50);
+  const sw=document.getElementById("sw"); if(sw){sw.setAttribute("aria-pressed",night);sw.setAttribute("aria-label",night?UI[lang].nightoff:UI[lang].night);}
+}
+addEventListener("pointermove",e=>{if(!night)return;const v=document.querySelector(".nightveil");if(v){v.style.setProperty("--nx",e.clientX+"px");v.style.setProperty("--ny",e.clientY+"px");}});
+document.getElementById("foot").addEventListener("click",e=>{if(!e.target.closest("#sw"))return;try{const C=window.AudioContext||window.webkitAudioContext;const c=new C();const b=c.createBuffer(1,c.sampleRate*0.04,c.sampleRate);const d=b.getChannelData(0);for(let i=0;i<d.length;i++)d[i]=(Math.random()*2-1)*Math.exp(-i/(c.sampleRate*0.004));const n=c.createBufferSource();n.buffer=b;const f=c.createBiquadFilter();f.type="bandpass";f.frequency.value=2200;const g=c.createGain();g.gain.value=0.5;n.connect(f).connect(g).connect(c.destination);n.start();setTimeout(()=>c.close(),300);}catch(_){}
+  night=!night;try{sessionStorage.setItem("hf-night",night?"1":"0")}catch(_){};applyNight();if(night)toast(UI[lang].nighthint+" "+UI[lang].portalhint);});
+addEventListener("keydown",e=>{if(e.key==="Escape"&&night){night=false;applyNight();}});
+let lastTap={k:null,t:0};
+document.getElementById("app").addEventListener("click",e=>{
+  const a=e.target.closest(".hang a"); if(!a)return; if(night&&a.classList.contains("portal"))return; const now=Date.now();
+  if(lastTap.k===a&&now-lastTap.t<380){e.preventDefault();e.stopImmediatePropagation();a.classList.remove("tilt");void a.offsetWidth;a.classList.add("tilt");toast(UI[lang].guard);lastTap={k:null,t:0};return;}
+  lastTap={k:a,t:now}; e.preventDefault(); e.stopImmediatePropagation();
+  setTimeout(()=>{if(lastTap.k===a&&Date.now()-lastTap.t>=370){lastTap={k:null,t:0};const t=a.dataset.work;location.hash="uffizi";setTimeout(()=>document.getElementById(t)?.scrollIntoView(),80);}},390);
+},true);
+
+function placeFigs(){
+  document.querySelectorAll(".fig").forEach(e=>e.remove());
+  document.querySelectorAll(".hang a.empty").forEach(a=>a.classList.remove("empty"));
+  if(!night)return;
+  const empt=new Set(FIGS.map(f=>f.from).filter(k=>!["primavera","venus_urbino"].includes(k))); document.querySelectorAll(".hang a[data-k]").forEach(a=>{if(empt.has(a.dataset.k))a.classList.add("empty");});
+  const H=Math.max(document.documentElement.scrollHeight,innerHeight), W=document.documentElement.clientWidth;
+  FIGS.forEach((f,i)=>{const b=document.createElement("button");b.type="button";b.className="fig";b.dataset.f=f.id;b.setAttribute("aria-label",f.id);
+    const w=Math.min(f.w,W*0.32); b.style.width=w+"px";
+    const top=H*(0.12+0.8*(i+0.5)/FIGS.length)+(Math.sin(i*7.3)*60); const left=(W-w)*(0.08+0.84*((i*0.618)%1));
+    b.style.top=Math.max(80,top)+"px"; b.style.left=left+"px"; b.style.setProperty("--d",(5+i*0.9)+"s"); b.style.setProperty("--mx",((i%2?1:-1)*(10+i*3))+"px");
+    b.innerHTML=`<img src="fig/${f.id}.png" alt="">`; document.body.appendChild(b);});
+}
+document.body.addEventListener("click",e=>{const b=e.target.closest(".fig");if(!b)return;const f=FIGS.find(x=>x.id===b.dataset.f);if(f)toast(f.say[lang]);});
+addEventListener("resize",()=>{if(night)placeFigs();});
+let dusted=false; try{dusted=localStorage.getItem("hf-dust")==="1";}catch(e){}
+function dust(){
+  const c=document.getElementById("dust"); if(!c)return; const r=c.getBoundingClientRect(); if(!r.width)return; const dpr=Math.min(2,devicePixelRatio||1);
+  c.width=r.width*dpr; c.height=r.height*dpr; const g=c.getContext("2d"); g.scale(dpr,dpr);
+  const grd=g.createRadialGradient(r.width/2,r.height/2,10,r.width/2,r.height/2,r.width*.7); grd.addColorStop(0,"rgba(190,182,168,.93)"); grd.addColorStop(1,"rgba(150,142,128,.9)");
+  g.fillStyle=grd; g.fillRect(0,0,r.width,r.height);
+  for(let i=0;i<1400;i++){g.fillStyle=`rgba(${100+Math.random()*90|0},${95+Math.random()*80|0},${85+Math.random()*70|0},${Math.random()*.35})`;g.fillRect(Math.random()*r.width,Math.random()*r.height,Math.random()*2.2,Math.random()*2.2);}
+  g.globalCompositeOperation="destination-out"; let down=false, n=0;
+  const done=()=>{if(dusted)return; dusted=true; try{localStorage.setItem("hf-dust","1")}catch(_){}; c.style.transition="opacity .8s"; c.style.opacity=0; document.querySelector(".dusthint")?.remove(); setTimeout(()=>c.remove(),900); toast(UI[lang].dustdone); setTimeout(wingSketch,950); };
+  const wipe=e=>{const b=c.getBoundingClientRect(); const x=e.clientX-b.left,y=e.clientY-b.top; const br=g.createRadialGradient(x,y,0,x,y,22); br.addColorStop(0,"rgba(0,0,0,.9)"); br.addColorStop(1,"rgba(0,0,0,0)"); g.fillStyle=br; g.beginPath(); g.arc(x,y,22,0,7); g.fill();
+    if(++n%15===0){const d=g.getImageData(0,0,c.width,c.height).data; let cl=0,tot=0; for(let i=3;i<d.length;i+=64){tot++; if(d[i]<40) cl++;} if(cl/tot>.55) done();}};
+  c.addEventListener("pointerdown",e=>{down=true;try{c.setPointerCapture(e.pointerId)}catch(_){};wipe(e);});
+  c.addEventListener("pointermove",e=>{if(down||e.pointerType==="mouse")wipe(e);});
+  c.addEventListener("pointerup",()=>{down=false;});
+}
+let zExtra=1, ropeT=null;
+function rope(){const r=document.getElementById("rope"); r.classList.add("on"); toast(UI[lang].rope); clearTimeout(ropeT); ropeT=setTimeout(()=>r.classList.remove("on"),2200);}
+function zMore(f){ if(!ZV.w)return; const nz=zExtra*f; if(nz>2.2){zExtra=1; rope(); zLayout(); return;} zExtra=Math.max(1,nz); zLayout(); }
+document.getElementById("zs").addEventListener("dblclick",e=>{e.preventDefault();zMore(1.5);});
+document.getElementById("zs").addEventListener("wheel",e=>{if(!ZV.w)return;e.preventDefault();zMore(e.deltaY<0?1.15:1/1.15);},{passive:false});
+function midnightCheck(){ const h=new Date().getHours(); let manual=null; try{manual=sessionStorage.getItem("hf-night");}catch(_){}
+  if(h===0&&manual===null){night=true;applyNight();setTimeout(()=>toast(UI[lang].midnight),600);} }
+const VOX={"primavera": ["vox/primavera_0.mp3", "vox/primavera_1.mp3", "vox/primavera_2.mp3", "vox/primavera_3.mp3", "vox/primavera_4.mp3"], "venus_urbino": ["vox/venus_urbino_0.mp3", "vox/venus_urbino_1.mp3", "vox/venus_urbino_2.mp3"], "verkuendigung": ["vox/verkuendigung_0.mp3", "vox/verkuendigung_1.mp3", "vox/verkuendigung_2.mp3"]};
+const PORTALS={primavera:{snd:"garden"},venus_urbino:{snd:"room"},verkuendigung:{snd:"garden"}};
+const PV={gl:null,raf:0,mx:.5,my:.5,tx:.5,ty:.5,t0:0,ctx:null,nodes:[]};
+function pvOpen(key,fromEl){
+  const w=museumById("uffizi").works.find(x=>x.key===key); const ov=document.getElementById("pv"); const cv=document.getElementById("pvc");
+  document.getElementById("pvt").textContent=UI[lang].inside.replace("%s",w.name[lang]); document.getElementById("pvx").textContent=UI[lang].pvback; document.getElementById("pvh").textContent=UI[lang].pvhint;
+  ov.hidden=false; document.body.style.overflow="hidden";
+  const r=fromEl.getBoundingClientRect(); const fx=document.getElementById("pvfly");
+  fx.style.cssText=`left:${r.left}px;top:${r.top}px;width:${r.width}px;height:${r.height}px;background-image:url(${w.zimg});opacity:1`;
+  requestAnimationFrame(()=>{fx.classList.add("go");});
+  const img=new Image(), dep=new Image(); let n=0; const ready=()=>{if(++n<2)return; pvStart(img,dep); setTimeout(()=>{fx.style.opacity=0;fx.classList.remove("go");},900);};
+  img.onload=ready; dep.onload=ready; img.src=w.zimg; dep.src=w.zimg.replace(".jpg","_depth.png");
+  pvSound(PORTALS[key].snd); pvVoices(key);
+}
+function pvStart(img,dep){
+  const cv=document.getElementById("pvc"); const gl=cv.getContext("webgl"); if(!gl){return;} PV.gl=gl;
+  const vs="attribute vec2 p;varying vec2 v;void main(){v=p*.5+.5;v.y=1.-v.y;gl_Position=vec4(p,0,1);}";
+  const fs="precision mediump float;varying vec2 v;uniform sampler2D tI,tD;uniform vec2 m;uniform float z,ar,iar,t,yaw,pit;const float SPAN=2.2;void main(){vec2 q=(v-.5)*2.;float fovh=1.05/z*min(1.,ar/1.25);float ang=yaw+atan(q.x*tan(fovh*.5));float ux=ang/SPAN+.5;float vh=SPAN/iar;float h=q.y*tan(fovh*.5)/ar/cos(ang-yaw);float uy=.5+(h+pit)/vh*1.;vec2 uv=vec2(ux,uy);float d=texture2D(tD,clamp(uv,0.,1.)).r;vec2 o=(m-.5)*vec2(.05,.035)*(d-.35);uv+=o;vec4 c=texture2D(tI,clamp(uv,0.,1.));float ex=smoothstep(0.,.06,uv.x)*smoothstep(1.,.94,uv.x)*smoothstep(0.,.05,uv.y)*smoothstep(1.,.95,uv.y);float vg=smoothstep(1.35,.45,length(q*vec2(.8,1.)));float fl=.97+.03*sin(t*1.7)+.015*sin(t*4.3);gl_FragColor=vec4(c.rgb*ex*vg*fl,1.);}";
+  const sh=(t,src)=>{const s=gl.createShader(t);gl.shaderSource(s,src);gl.compileShader(s);return s;};
+  const pr=gl.createProgram();gl.attachShader(pr,sh(gl.VERTEX_SHADER,vs));gl.attachShader(pr,sh(gl.FRAGMENT_SHADER,fs));gl.linkProgram(pr);gl.useProgram(pr);
+  const b=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,b);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,1,-1,-1,1,1,1]),gl.STATIC_DRAW);
+  const loc=gl.getAttribLocation(pr,"p");gl.enableVertexAttribArray(loc);gl.vertexAttribPointer(loc,2,gl.FLOAT,false,0,0);
+  const tex=(im,u,i)=>{const t=gl.createTexture();gl.activeTexture(gl.TEXTURE0+i);gl.bindTexture(gl.TEXTURE_2D,t);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_S,gl.CLAMP_TO_EDGE);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_T,gl.CLAMP_TO_EDGE);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MIN_FILTER,gl.LINEAR);gl.texImage2D(gl.TEXTURE_2D,0,gl.RGB,gl.RGB,gl.UNSIGNED_BYTE,im);gl.uniform1i(gl.getUniformLocation(pr,u),i);};
+  tex(img,"tI",0);tex(dep,"tD",1);
+  const U=n=>gl.getUniformLocation(pr,n); const iar=img.width/img.height; PV.t0=performance.now();
+  const red=matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const frame=now=>{ if(!PV.gl)return; const dpr=Math.min(2,devicePixelRatio||1); const W=cv.clientWidth*dpr,H=cv.clientHeight*dpr; if(cv.width!==W||cv.height!==H){cv.width=W;cv.height=H;gl.viewport(0,0,W,H);}
+    const t=(now-PV.t0)/1000; if(PV.idle&&!red){PV.tyaw=.55*Math.sin(t*.16);PV.tpit=.06*Math.sin(t*.21);PV.tx=.5+.3*Math.sin(t*.35);PV.ty=.5+.2*Math.sin(t*.27+1);}
+    PV.mx+=(PV.tx-PV.mx)*.06; PV.my+=(PV.ty-PV.my)*.06;
+    const z=red?1.15:1.0+Math.min(1,t/2.5)*0.15;
+    PV.yaw+=(PV.tyaw-PV.yaw)*.07; PV.pit+=(PV.tpit-PV.pit)*.07; gl.uniform1f(U("yaw"),PV.yaw); gl.uniform1f(U("pit"),PV.pit); gl.uniform2f(U("m"),PV.mx,PV.my);gl.uniform1f(U("z"),z);gl.uniform1f(U("ar"),W/H);gl.uniform1f(U("iar"),iar);gl.uniform1f(U("t"),red?0:t);
+    gl.drawArrays(gl.TRIANGLE_STRIP,0,4); PV.raf=requestAnimationFrame(frame);};
+  PV.idle=true; PV.yaw=PV.tyaw=0; PV.pit=PV.tpit=0; PV.raf=requestAnimationFrame(frame);
+}
+function pvSound(kind){
+  try{const C=window.AudioContext||window.webkitAudioContext; const c=new C(); PV.ctx=c; const out=c.createGain(); out.gain.value=0; out.connect(c.destination); out.gain.linearRampToValueAtTime(0.5,c.currentTime+2.5); PV.out=out;
+    const len=c.sampleRate*4, nb=c.createBuffer(1,len,c.sampleRate), d=nb.getChannelData(0); let last=0; for(let i=0;i<len;i++){last=(last+0.02*(Math.random()*2-1))/1.02;d[i]=last*3;}
+    const n=c.createBufferSource(); n.buffer=nb; n.loop=true; const lp=c.createBiquadFilter(); lp.type="lowpass"; lp.frequency.value=kind==="room"?300:700; const g=c.createGain(); g.gain.value=kind==="room"?0.25:0.18; n.connect(lp).connect(g).connect(out); n.start(); PV.nodes.push(n);
+    if(kind==="garden"){const chirp=()=>{if(!PV.ctx)return;const o=c.createOscillator(),gg=c.createGain();const f=2400+Math.random()*1800,t=c.currentTime;o.frequency.setValueAtTime(f,t);for(let i=1;i<4;i++)o.frequency.linearRampToValueAtTime(f*(i%2?1.25:0.9),t+i*0.06);gg.gain.setValueAtTime(0,t);gg.gain.linearRampToValueAtTime(0.05,t+0.02);gg.gain.exponentialRampToValueAtTime(0.0001,t+0.28);o.connect(gg).connect(out);o.start(t);o.stop(t+0.3);PV.chirp=setTimeout(chirp,500+Math.random()*2600);};PV.chirp=setTimeout(chirp,900);}
+    else{const tick=()=>{if(!PV.ctx)return;const o=c.createOscillator(),gg=c.createGain(),t=c.currentTime;o.type="triangle";o.frequency.value=1800;gg.gain.setValueAtTime(0.012,t);gg.gain.exponentialRampToValueAtTime(0.0001,t+0.05);o.connect(gg).connect(out);o.start(t);o.stop(t+0.06);PV.chirp=setTimeout(tick,1000);};PV.chirp=setTimeout(tick,1000);}
+  }catch(e){}
+}
+
+async function pvVoices(key){
+  const c=PV.ctx; if(!c||!VOX[key])return; let bufs=[];
+  try{bufs=await Promise.all(VOX[key].map(async u=>c.decodeAudioData(await (await fetch(u)).arrayBuffer())));}catch(e){return;}
+  let last=-1;
+  const play=()=>{ if(!PV.ctx||PV.ctx!==c)return; let i; do{i=Math.floor(Math.random()*bufs.length);}while(bufs.length>1&&i===last); last=i;
+    const src=c.createBufferSource(); src.buffer=bufs[i]; const g=c.createGain(); g.gain.value=0.55+Math.random()*0.25;
+    let node=g; if(c.createStereoPanner){const pn=c.createStereoPanner(); pn.pan.value=(Math.random()*1.4-0.7); g.connect(pn); node=pn;}
+    src.connect(g); node.connect(PV.out); src.start(); PV.vt=setTimeout(play,(bufs[i].duration*1000)+4000+Math.random()*7000); };
+  PV.vt=setTimeout(play,2800);
+}
+function pvClose(){ clearTimeout(PV.vt); cancelAnimationFrame(PV.raf); PV.gl=null; clearTimeout(PV.chirp); if(PV.ctx){const c=PV.ctx;PV.ctx=null;try{PV.out.gain.linearRampToValueAtTime(0,c.currentTime+.4);setTimeout(()=>c.close(),500);}catch(_){}}
+  document.getElementById("pv").hidden=true; document.body.style.overflow=""; }
+document.getElementById("pvx").onclick=pvClose;
+addEventListener("keydown",e=>{if(e.key==="Escape"&&!document.getElementById("pv").hidden)pvClose();});
+(()=>{const cv=document.getElementById("pvc"); let drag=null;
+  const idleLater=()=>{clearTimeout(PV.it);PV.it=setTimeout(()=>{PV.idle=true;PV.t0=performance.now();},5000);};
+  cv.addEventListener("pointerdown",e=>{PV.idle=false;drag={x:e.clientX,y:e.clientY,yaw:PV.tyaw,pit:PV.tpit};try{cv.setPointerCapture(e.pointerId)}catch(_){};cv.style.cursor="grabbing";idleLater();});
+  cv.addEventListener("pointermove",e=>{const b=cv.getBoundingClientRect(); PV.tx=(e.clientX-b.left)/b.width; PV.ty=(e.clientY-b.top)/b.height;
+    if(drag){PV.idle=false; PV.tyaw=Math.max(-.62,Math.min(.62,drag.yaw-(e.clientX-drag.x)/b.width*1.6)); PV.tpit=Math.max(-.18,Math.min(.18,drag.pit+(e.clientY-drag.y)/b.height*.5)); idleLater();}
+    else if(e.pointerType==="mouse"){PV.idle=false; PV.tyaw=(PV.tx-.5)*1.15; PV.tpit=(PV.ty-.5)*-.3; idleLater();}});
+  const up=()=>{drag=null;cv.style.cursor="grab";}; cv.addEventListener("pointerup",up); cv.addEventListener("pointercancel",up);
+  addEventListener("keydown",e=>{if(document.getElementById("pv").hidden)return; if(e.key==="ArrowLeft"){PV.idle=false;PV.tyaw=Math.max(-.62,PV.tyaw-.12);idleLater();} if(e.key==="ArrowRight"){PV.idle=false;PV.tyaw=Math.min(.62,PV.tyaw+.12);idleLater();}});
+})();
+document.getElementById("app").addEventListener("click",e=>{ if(!night)return; const a=e.target.closest(".hang a.portal"); if(!a)return; e.preventDefault(); e.stopImmediatePropagation(); pvOpen(a.dataset.k,a); },true);
+
+function wingSketch(){
+  const pic=document.querySelector("#w-verkuendigung .pic"); if(!pic||!dusted||pic.querySelector(".wsk"))return;
+  const svg=`<svg class="wsk" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M25 27 C23 21 20 20 17 22 C16 25 16.5 28 18 30 C20 32 23 33 25 31 Z" fill="rgba(232,199,112,.18)" stroke="#E8C770" stroke-width=".35" vector-effect="non-scaling-stroke"/><path d="M17 22 C14 21.5 11.5 22.5 9.5 25 C11.5 27 14 28.5 17.5 29.5" fill="rgba(0,0,0,.12)" stroke="#fff" stroke-width=".3" stroke-dasharray="1.2 1" vector-effect="non-scaling-stroke"/></svg>`;
+  pic.insertAdjacentHTML("beforeend",svg);
+  const fig=pic.closest("figure"); const u=UI[lang];
+  fig.insertAdjacentHTML("beforeend",`<div class="wskbar"><span>${u.wingsk}</span><button type="button" id="wsktg">${u.wingoff}</button></div>`);
+  document.getElementById("wsktg").onclick=e=>{const s=pic.querySelector(".wsk");s.hidden=!s.hidden;e.target.textContent=s.hidden?u.wingon:u.wingoff;};
+}
+addEventListener("hashchange",()=>{render();scrollTo(0,0);});
+render();
+midnightCheck();
+</script>
+<script>if("serviceWorker" in navigator){addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}));}</script>
+</body>
+</html>
