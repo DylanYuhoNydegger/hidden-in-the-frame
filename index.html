@@ -683,7 +683,12 @@ function wingSketch(){
   document.getElementById("wsktg").onclick=e=>{const s=pic.querySelector(".wsk");s.hidden=!s.hidden;e.target.textContent=s.hidden?u.wingon:u.wingoff;};
 }
 addEventListener("hashchange",()=>{render();scrollTo(0,0);});
-render();
+/* Always start on the home screen. Deliberate deep links use ?m=<museum> (e.g. from the painting pages). */
+(()=>{try{const q=new URLSearchParams(location.search).get("m");const base=location.pathname;
+ if(q&&D.museums.some(m=>m.id===q)){history.replaceState(null,"",base+"#"+q);}
+ else if(location.search||(location.hash&&location.hash!=="#home")){history.replaceState(null,"",base+"#home");}}catch(_){}})();
+if("scrollRestoration" in history)history.scrollRestoration="manual";
+render();scrollTo(0,0);
 midnightCheck();
 </script>
 <script>if("serviceWorker" in navigator){addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}));}</script>
